@@ -33,7 +33,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t("description"),
       url: `/${locale}`,
       siteName: "Zaza Games",
-      locale,
+      locale: locale === "pt" ? "pt_BR" : "en_US",
+      type: "website",
+      images: [
+        { url: "/og-image.png", width: 1200, height: 630, alt: "Zaza Games" },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/og-image.png"],
     },
   };
 }
