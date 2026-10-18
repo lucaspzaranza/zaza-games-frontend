@@ -73,7 +73,7 @@ export function Header() {
         <Link
           href={`/${locale}`}
           aria-label={brandName}
-          className="flex items-center gap-3"
+          className="flex items-center gap-3" 
         >
           <Image
             src="/zaza-games-brand-kit-v4/gold-z.png"
@@ -106,34 +106,6 @@ export function Header() {
     </header>
   );
 }
-
-// export function Hero() {
-//   const t = useTranslations("Hero");
-//   return (
-//     <section className={`bg-royal px-6 py-24 ${gamePattern}`}>
-//       <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 text-center md:flex-row md:text-left">
-//         <Logo height={160} />
-//         <div>
-//           <h1 className="font-pixel">
-//             <span className={brandTitle}>{brandName}</span>
-//             <span className="mt-1 block text-sm text-gold-glow sm:text-xl">
-//               {t("title")}
-//             </span>
-//           </h1>
-//           <p className="mt-6 max-w-xl text-lg">{t("subtitle")}</p>
-//           <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-//             <a href="#demos" className={`${button} bg-gold text-ink`}>
-//               {t("ctaDemos")}
-//             </a>
-//             <a href="#contact" className={`${button} bg-snow text-ink`}>
-//               {t("ctaContact")}
-//             </a>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 export function Hero() {
   const t = useTranslations("Hero");
