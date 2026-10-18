@@ -1,0 +1,131 @@
+{
+  "Meta": {
+    "title": "Zaza Games | Gamified Solutions for events, companies and education",
+    "description": "White label minigames, custom games and websites with games for events, companies, schools and parties. By Lucas Zaranza, game and frontend developer."
+  },
+  "Nav": {
+    "gamification": "Gamification",
+    "offer": "Solutions",
+    "demos": "Demos",
+    "about": "About",
+    "contact": "Contact",
+    "frontend": "Web projects"
+  },
+  "Hero": {
+    "title": "Gamified Solutions",
+    "subtitle": "Branded games that draw a crowd, hold attention and make people remember you.",
+    "ctaDemos": "Watch demos",
+    "ctaContact": "Talk to me"
+  },
+  "Gamification": {
+    "title": "What is gamification?",
+    "intro": "It means using the logic of games (challenge, score, reward and ranking) to capture attention, teach and engage. From a gender reveal party to a company convention, the game becomes the center of the experience.",
+    "items": [
+      { "title": "Events", "text": "Activations at trade shows and brand campaigns, with rankings, data capture and a custom look." },
+      { "title": "Companies", "text": "Trainings, internal campaigns and customer actions that people join because they want to." },
+      { "title": "Education", "text": "Educational games that run right in the browser, on desktop or mobile." },
+      { "title": "Parties", "text": "Gender reveals, birthdays and quizzes that liven up the whole party." }
+    ]
+  },
+  "Offer": {
+    "title": "How I can help",
+    "items": [
+      { "title": "Ready-made minigames (white label)", "text": "Roulette, Flappy Bird, Memory Game, Slot Machine and more, with your brand, colors and prizes." },
+      { "title": "Custom development", "text": "A game built from scratch for your idea, from design to release." },
+      { "title": "Websites with games", "text": "React and Next.js websites with games built in, for campaigns and online activations." }
+    ]
+  },
+  "Demos": {
+    "title": "See it in action",
+    "intro": "A few of the games that can become yours. Click to watch.",
+    "play": "Watch",
+    "items": [
+      { "title": "Roulette", "text": "Draws and prizes for events." },
+      { "title": "Flappy Bird", "text": "A classic with your brand identity." },
+      { "title": "Slot Machine", "text": "Combos and giveaways on the spot." },
+      { "title": "Memory Game", "text": "Great for kids and educational actions." }
+    ]
+  },
+  "Frontend": {
+    "title": "Web projects",
+    "intro": "Interfaces I built as a frontend developer, from complex apps to portfolios.",
+    "visit": "Visit site",
+    "items": {
+      "zazastro": {
+        "title": "Zazastro",
+        "text": "Astrology web app built from scratch, with interactive SVG charts using D3.js, shareable routes and multiple languages."
+      },
+      "botbot": {
+        "title": "Robot dashboard",
+        "text": "React dashboard to monitor and command robots, with cameras and an AI chat."
+      },
+      "frontendPortfolio": {
+        "title": "My frontend portfolio",
+        "text": "Personal portfolio built with React, Next.js, TypeScript and Tailwind CSS."
+      },
+      "gamePortfolio": {
+        "title": "Game portfolio",
+        "text": "My Unity3D games gathered in a website with multiple style themes."
+      }
+    }
+  },
+  "About": {
+    "title": "Who is behind it",
+    "intro": "I'm Lucas Zaranza (Zazá), a fullstack developer with over 10 years of experience. I started making games with Unity3D and C#, and today I also build web interfaces with React, Next.js and TypeScript. Combining both is what Zaza Games is about.",
+    "gamesTitle": "Game development",
+    "games": [
+      {
+        "year": "2014–2015",
+        "title": "Touch Midia",
+        "text": "Games for corporate events on touch screens (Roulette, Flappy Bird, Slot Machine and Memory), with rankings, data capture and customizable charts."
+      },
+      {
+        "year": "2018",
+        "title": "Penosas Strike",
+        "text": "A mobile game I built from scratch (programming, pixel art and soundtrack), published on Google Play."
+      },
+      {
+        "year": "2020",
+        "title": "Doom of the Penosas",
+        "text": "Shoot'em up with multiplayer and a WebGL demo."
+      },
+      {
+        "year": "2022",
+        "title": "Educational WebGL games",
+        "text": "A series of freelance games, responsive on mobile and desktop."
+      },
+      {
+        "year": "2024",
+        "title": "WebGL freelances",
+        "text": "World Water Day game and a Valentine's Day quiz."
+      }
+    ],
+    "gamesLink": "See my full game portfolio",
+    "frontendLink": "See my full websites portfolio",
+    "frontTitle": "Web development",
+    "front": [
+      {
+        "title": "Zazastro",
+        "text": "Astrology web app built from scratch, with interactive SVG charts using D3.js, Next.js and multiple languages."
+      },
+      {
+        "title": "Calendar widget",
+        "text": "Windows desktop widget integrated with Google Calendar, with a glassmorphism look."
+      },
+      {
+        "title": "Robot dashboard",
+        "text": "React dashboard to monitor and command robots, with cameras and an AI chat."
+      },
+      {
+        "title": "Landing pages",
+        "text": "Sales pages for a law firm and for an astrology course."
+      }
+    ]
+  },
+  "Contact": {
+    "title": "Let's gamify your project?",
+    "text": "Tell me your idea and I'll reply with a proposal.",
+    "email": "Email",
+    "instagram": "Instagram"
+  }
+}

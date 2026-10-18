@@ -1,0 +1,99 @@
+{
+  "Meta": {
+    "title": "Zaza Games | Soluções Gamificadas para eventos, empresas e educação",
+    "description": "Minigames white label, jogos sob medida e sites com games para eventos, empresas, escolas e festas. Por Lucas Zaranza, desenvolvedor de jogos e frontend."
+  },
+  "Nav": {
+    "gamification": "Gamificação",
+    "offer": "Soluções",
+    "demos": "Demos",
+    "about": "Quem faz",
+    "contact": "Contato",
+    "frontend": "Projetos web"
+  },
+  "Hero": {
+    "title": "Soluções Gamificadas",
+    "subtitle": "Jogos com a cara da sua marca que juntam gente, prendem a atenção e fazem o público lembrar de você.",
+    "ctaDemos": "Ver demos",
+    "ctaContact": "Falar comigo"
+  },
+  "Gamification": {
+    "title": "O que é gamificar?",
+    "intro": "É usar a lógica dos jogos (desafio, pontuação, recompensa e ranking) para prender a atenção, ensinar e engajar. Do chá revelação à convenção de empresa, o jogo vira o centro da experiência.",
+    "items": [
+      { "title": "Eventos", "text": "Ativações em feiras e ações de marca, com ranking, captação de dados e visual personalizado." },
+      { "title": "Empresas", "text": "Treinamentos, campanhas internas e ações com clientes que as pessoas fazem por vontade própria." },
+      { "title": "Educação", "text": "Jogos educativos que rodam direto no navegador, no computador ou no celular." },
+      { "title": "Festas", "text": "Chá revelação, aniversários e quizzes que animam a festa inteira." }
+    ]
+  },
+  "Offer": {
+    "title": "Como posso ajudar",
+    "items": [
+      { "title": "Minigames prontos (white label)", "text": "Roleta, Flappy Bird, Jogo da Memória, Caça-Níqueis e outros, com a sua marca, cores e prêmios." },
+      { "title": "Desenvolvimento sob medida", "text": "Um jogo criado do zero para a sua ideia, do design à publicação." },
+      { "title": "Sites com games", "text": "Sites em React e Next.js com jogos integrados, para campanhas e ações online." }
+    ]
+  },
+  "Demos": {
+    "title": "Veja em ação",
+    "intro": "Alguns dos jogos que podem virar o seu. Clique para assistir.",
+    "play": "Assistir",
+    "items": [
+      { "title": "Roleta", "text": "Sorteios e prêmios para eventos." },
+      { "title": "Flappy Bird", "text": "Clássico com a identidade da sua marca." },
+      { "title": "Caça-Níqueis", "text": "Combinações e brindes na hora." },
+      { "title": "Jogo da Memória", "text": "Perfeito para crianças e ações educativas." }
+    ]
+  },
+  "Frontend": {
+    "title": "Projetos web",
+    "intro": "Interfaces que desenvolvi como dev frontend, de apps complexos a portfólios.",
+    "visit": "Visitar site",
+    "items": {
+      "zazastro": {
+        "title": "Zazastro",
+        "text": "Aplicação de astrologia criada do zero, com mapas interativos em SVG e D3.js, rotas compartilháveis por link e várias línguas."
+      },
+      "botbot": {
+        "title": "Dashboard de robôs",
+        "text": "Painel em React para monitorar e comandar robôs, com câmeras e chat com IA."
+      },
+      "frontendPortfolio": {
+        "title": "Meu portfólio frontend",
+        "text": "Portfólio pessoal com React, Next.js, TypeScript e Tailwind CSS."
+      },
+      "gamePortfolio": {
+        "title": "Portfólio de games",
+        "text": "Meus jogos em Unity3D reunidos em um site com vários temas de estilo."
+      }
+    }
+  },
+  "About": {
+    "title": "Quem está por trás",
+    "intro": "Sou o Lucas Zaranza (o Zazá), desenvolvedor fullstack com mais de 10 anos de experiência. Comecei criando jogos com Unity3D e C# e hoje também construo interfaces web com React, Next.js e TypeScript. Unir as duas coisas é o que faz a Zaza Games.",
+    "gamesTitle": "Desenvolvimento de jogos",
+    "games": [
+      { "year": "2014–2015", "title": "Touch Midia", "text": "Jogos para eventos corporativos em telas touch (Roleta, Flappy Bird, Caça-Níqueis e Memória), com ranking, captação de dados e gráficos customizáveis." },
+      { "year": "2018", "title": "Penosas Strike", "text": "Jogo mobile feito por mim do zero (programação, pixel art e trilha), publicado na Google Play." },
+      { "year": "2020", "title": "Doom of the Penosas", "text": "Shoot'em up com multiplayer e demo em WebGL." },
+      { "year": "2022", "title": "Jogos educativos WebGL", "text": "Série de jogos freelance, responsivos para celular e computador." },
+      { "year": "2024", "title": "Freelances WebGL", "text": "Jogo do Dia Mundial da Água e Quiz de Dia dos Namorados." }
+    ],
+    "gamesLink": "Ver portfólio completo de games",
+    "frontendLink": "Ver portfólio completo websites",
+    "frontTitle": "Desenvolvimento web",
+    "front": [
+      { "title": "Zazastro", "text": "Aplicação web de astrologia criada do zero, com mapas interativos em SVG e D3.js, Next.js e várias línguas." },
+      { "title": "Widget de calendário", "text": "Widget para Windows integrado ao Google Calendar, com visual glassmorphism." },
+      { "title": "Dashboard de robôs", "text": "Painel em React para monitorar e comandar robôs, com câmeras e chat com IA." },
+      { "title": "Landing pages", "text": "Páginas de venda para advocacia e para um curso de astrologia." }
+    ]
+  },
+  "Contact": {
+    "title": "Vamos gamificar o seu projeto?",
+    "text": "Conte sua ideia e eu respondo com uma proposta.",
+    "email": "E-mail",
+    "instagram": "Instagram"
+  }
+}

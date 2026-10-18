@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* Official Zaza Games palette */
+@theme inline {
+  --color-ink: #131a33;
+  --color-royal-shadow: #1e3a9e;
+  --color-royal: #3a63f0;
+  --color-royal-glow: #86a5ff;
+  --color-gold-shadow: #b87a12;
+  --color-gold: #f6b93b;
+  --color-gold-glow: #ffe08a;
+  --color-snow-shadow: #b4c3f5;
+  --color-snow: #f4f7ff;
+  --font-pixel: var(--font-press-start), monospace;
+  --font-sans: var(--font-lexend), system-ui, sans-serif;
+  --color-mist: #ddd;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+body { background: var(--color-ink); color: #fff; }
