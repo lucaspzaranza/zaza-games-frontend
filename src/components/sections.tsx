@@ -6,6 +6,7 @@ import { demoVideoIds } from "@/data/demos";
 import { contactEmail, frontendPortfolioUrl, gamePortfolioUrl, instagramUrl } from "@/config/site";
 import { frontendProjects } from "@/data/frontendProjects";
 import Image from "next/image";
+import games from "@/data/games.json";
 
 type Item = { title: string; text: string };
 type GameItem = Item & { year: string };
@@ -43,11 +44,11 @@ const tones = {
   sky: { wrap: "bg-snow-shadow text-ink", heading: "text-ink" },
 } as const;
 
-function Section({ id, title, tone = "dark", children }: { id: string; title: string; tone?: keyof typeof tones; children: React.ReactNode }) {
+function Section({ id, title, tone = "dark", children, spacing = "py-20" }: { id: string; title: string; tone?: keyof typeof tones; children: React.ReactNode; spacing?: string }) {
   return (
-    <section id={id} className={`${tones[tone].wrap} px-6 py-20`}>
+    <section id={id} className={`${tones[tone].wrap} px-6 ${spacing}`}>
       <div className="mx-auto max-w-5xl">
-        <h2 className={`mb-8 font-pixel text-lg leading-relaxed sm:text-2xl ${tones[tone].heading}`}>{title}</h2>
+        <h2 className={`mb-8 font-pixel text-lg leading-relaxed sm:text-2xl ${tones[tone].heading}`}>{title.endsWith("?") ? title.slice(0, -1) : title}{(title.endsWith("?") || title === "Quem está por trás") && <Image src="/smw-question-block.png" alt="" aria-hidden="true" width={32} height={32} className="ml-1 mb-2 inline-block size-8 align-middle object-contain"  unoptimized/>}</h2>
         {children}
       </div>
     </section>
@@ -80,6 +81,7 @@ export function Header() {
             alt="Zaza Games"
             width={28}
             height={36}
+            className="h-9 w-auto shrink-0"
             unoptimized
           />
           <span className={brandMini + " font-pixel text-[10px] text-white sm:hidden lg:inline lg:text-xs"}>
@@ -188,7 +190,7 @@ export function Demos() {
   const t = useTranslations("Demos");
   const items = t.raw("items") as Item[];
   return (
-    <Section id="demos" title={t("title")} tone="light">
+    <Section id="demos" title={t("title")} tone="light" spacing="pt-20 pb-5">
       <p className="mb-10 max-w-3xl text-lg">{t("intro")}</p>
       <div className="grid gap-10 sm:grid-cols-2">
         {items.map((item, index) => (
@@ -197,6 +199,8 @@ export function Demos() {
               id={demoVideoIds[index]}
               title={item.title}
               playLabel={t("play")}
+              closeLabel={t("close")}
+              portrait={index === 1}
             />
             <figcaption className="mt-4">
               <h3 className="font-pixel text-xs leading-relaxed text-royal-shadow">
@@ -211,6 +215,73 @@ export function Demos() {
   );
 }
 
+function getYouTubeId(url: string) {
+  const parsed = new URL(url);
+  if (parsed.hostname.endsWith("youtu.be")) return parsed.pathname.slice(1);
+  if (parsed.pathname.startsWith("/shorts/")) return parsed.pathname.split("/")[2];
+  return parsed.searchParams.get("v") ?? parsed.pathname.split("/").pop() ?? "";
+}
+
+export function AllGames() {
+  const t = useTranslations("Games");
+  const locale = useLocale() as "pt" | "en";
+
+  return (
+    <section id="all-games" className="bg-snow px-6 pt-5 pb-20 text-ink">
+      <div className="mx-auto max-w-5xl">
+        <details className="group">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-6 border-b-4 border-ink pb-5 marker:hidden">
+            <span>
+              <span className="block font-pixel text-lg leading-relaxed text-royal-shadow sm:text-2xl">{t("title")}</span>
+              <span className="mt-3 block text-sm">{t("expand")}</span>
+            </span>
+            <span aria-hidden="true" className="shrink-0 font-pixel text-2xl text-royal-shadow transition-transform group-open:rotate-180">▼</span>
+          </summary>
+          <div className="grid gap-8 pt-8 sm:grid-cols-2 lg:grid-cols-3">
+            {games.map((game) => (
+              <article key={game.id} className="overflow-hidden border-4 border-ink bg-white text-ink shadow-[6px_6px_0_0_#131a33]">
+                {game.youtube ? (
+                  <LiteYouTube
+                    id={getYouTubeId(game.youtube)}
+                    title={game.name[locale]}
+                    playLabel={t("watch")}
+                    closeLabel={t("close")}
+                    portrait={game.youtube.includes("/shorts/")}
+                    thumbnail={game.image}
+                    className="border-0 shadow-none"
+                  />
+                ) : (
+                  <div className="relative aspect-video border-b-4 border-ink bg-ink">
+                    <Image
+                      src={game.image}
+                      alt={game.name[locale]}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+                <div className="flex flex-wrap items-center justify-between gap-4 p-4">
+                  <h3 className="font-pixel text-xs leading-relaxed text-royal-shadow">{game.name[locale]}</h3>
+                  {game.demo && (
+                    <a
+                      href={game.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="border-2 border-ink bg-royal px-3 py-2 font-pixel text-[10px] text-white shadow-[2px_2px_0_0_#131a33] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
+                    >
+                      {t("demo")}
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </details>
+      </div>
+    </section>
+  );
+}
 export function FrontendProjects() {
   const t = useTranslations("Frontend");
   return (

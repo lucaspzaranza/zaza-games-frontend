@@ -28,7 +28,7 @@
     ]
   },
   "Offer": {
-    "title": "How I can help",
+    "title": "How can I help?",
     "items": [
       { "title": "Ready-made minigames (white label)", "text": "Roulette, Flappy Bird, Memory Game, Slot Machine and more, with your brand, colors and prizes." },
       { "title": "Custom development", "text": "A game built from scratch for your idea, from design to release." },
@@ -39,6 +39,7 @@
     "title": "See it in action",
     "intro": "A few of the games that can become yours. Click to watch.",
     "play": "Watch",
+    "close": "Close video",
     "items": [
       { "title": "Roulette", "text": "Draws and prizes for events." },
       { "title": "Flappy Bird", "text": "A classic with your brand identity." },
@@ -64,8 +65,8 @@
         "text": "Personal portfolio built with React, Next.js, TypeScript and Tailwind CSS."
       },
       "gamePortfolio": {
-        "title": "Game portfolio",
-        "text": "My Unity3D games gathered in a website with multiple style themes."
+        "title": "Game Dev landing page",
+      "text": "My professional landing page, dedicated exclusively to my work as a game developer."
       }
     }
   },
@@ -109,8 +110,8 @@
         "text": "Astrology web app built from scratch, with interactive SVG charts using D3.js, Next.js and multiple languages."
       },
       {
-        "title": "Calendar widget",
-        "text": "Windows desktop widget integrated with Google Calendar, with a glassmorphism look."
+        "title": "My frontend portfolio",
+      "text": "Personal portfolio built with React, Next.js, TypeScript and Tailwind CSS."
       },
       {
         "title": "Robot dashboard",
@@ -118,9 +119,16 @@
       },
       {
         "title": "Landing pages",
-        "text": "Sales pages for a law firm and for an astrology course."
+      "text": "Landing pages I created for different projects, services and businesses, including my professional page focused on game development."
       }
     ]
+  },
+  "Games": {
+    "title": "All games",
+    "expand": "Browse all 23 games",
+    "watch": "Watch video",
+    "close": "Close video",
+    "demo": "Play"
   },
   "Contact": {
     "title": "Let's gamify your project?",

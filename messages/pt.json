@@ -28,7 +28,7 @@
     ]
   },
   "Offer": {
-    "title": "Como posso ajudar",
+    "title": "Como posso ajudar?",
     "items": [
       { "title": "Minigames prontos (white label)", "text": "Roleta, Flappy Bird, Jogo da Memória, Caça-Níqueis e outros, com a sua marca, cores e prêmios." },
       { "title": "Desenvolvimento sob medida", "text": "Um jogo criado do zero para a sua ideia, do design à publicação." },
@@ -39,6 +39,7 @@
     "title": "Veja em ação",
     "intro": "Alguns dos jogos que podem virar o seu. Clique para assistir.",
     "play": "Assistir",
+    "close": "Fechar vídeo",
     "items": [
       { "title": "Roleta", "text": "Sorteios e prêmios para eventos." },
       { "title": "Flappy Bird", "text": "Clássico com a identidade da sua marca." },
@@ -64,8 +65,8 @@
         "text": "Portfólio pessoal com React, Next.js, TypeScript e Tailwind CSS."
       },
       "gamePortfolio": {
-        "title": "Portfólio de games",
-        "text": "Meus jogos em Unity3D reunidos em um site com vários temas de estilo."
+        "title": "Landing page de Game Dev",
+      "text": "Minha landing page profissional, dedicada exclusivamente ao meu trabalho como desenvolvedor de games."
       }
     }
   },
@@ -85,10 +86,19 @@
     "frontTitle": "Desenvolvimento web",
     "front": [
       { "title": "Zazastro", "text": "Aplicação web de astrologia criada do zero, com mapas interativos em SVG e D3.js, Next.js e várias línguas." },
-      { "title": "Widget de calendário", "text": "Widget para Windows integrado ao Google Calendar, com visual glassmorphism." },
+      { "title": "Meu portfólio frontend",
+      "text": "Portfólio pessoal com React, Next.js, TypeScript e Tailwind CSS." },
       { "title": "Dashboard de robôs", "text": "Painel em React para monitorar e comandar robôs, com câmeras e chat com IA." },
-      { "title": "Landing pages", "text": "Páginas de venda para advocacia e para um curso de astrologia." }
+      { "title": "Landing pages",
+      "text": "Landing pages desenvolvidas para diferentes projetos, serviços e negócios, incluindo minha página profissional focada em desenvolvimento de games." }
     ]
+  },
+  "Games": {
+    "title": "Todos os jogos",
+    "expand": "Clique para ver todos os 23 jogos",
+    "watch": "Assistir vídeo",
+    "close": "Fechar vídeo",
+    "demo": "Jogar"
   },
   "Contact": {
     "title": "Vamos gamificar o seu projeto?",

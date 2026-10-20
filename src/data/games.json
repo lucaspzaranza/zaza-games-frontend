@@ -1,0 +1,232 @@
+[
+  {
+    "id": 2,
+    "name": {
+      "pt": "Roleta",
+      "en": "Roulette Game"
+    },
+    "image": "/games/roleta.webp",
+    "demo": "",
+    "youtube": "https://youtu.be/FGZL7OehB9A"
+  },
+  {
+    "id": 3,
+    "name": {
+      "pt": "Flappy Bird",
+      "en": "Flappy Bird"
+    },
+    "image": "/games/flappy-bird.webp",
+    "demo": "https://lucaspzaranza.github.io/flappy-bird-webgl/",
+    "youtube": "https://youtube.com/shorts/vNJFnJMritI"
+  },
+  {
+    "id": 4,
+    "name": {
+      "pt": "Catch Game",
+      "en": "Catch Game"
+    },
+    "image": "/games/catch-game.webp",
+    "demo": "",
+    "youtube": "https://youtu.be/3AfEJQc_e-0"
+  },
+  {
+    "id": 5,
+    "name": {
+      "pt": "Caça-Níqueis",
+      "en": "Slot Machine"
+    },
+    "image": "/games/slot-machine.webp",
+    "demo": "https://lucaspzaranza.github.io/slot-machine-page/",
+    "youtube": "https://youtu.be/Di7geb4OCGo"
+  },
+  {
+    "id": 6,
+    "name": {
+      "pt": "Jogo da Memória",
+      "en": "Match Game"
+    },
+    "image": "/games/jogo-da-memoria.webp",
+    "demo": "https://lucaspzaranza.github.io/jogo-memoria-page/",
+    "youtube": "https://youtu.be/-EBzBFItrHs"
+  },
+  {
+    "id": 7,
+    "name": {
+      "pt": "Teclado Virtual do Macbook",
+      "en": "Macbook Virtual Keyboard"
+    },
+    "image": "/games/virtual-keyboard.webp",
+    "demo": "https://lucaspzaranza.github.io/unity-virtual-keyboard-page/",
+    "youtube": "https://youtu.be/2O_RLLSMs_c"
+  },
+  {
+    "id": 8,
+    "name": {
+      "pt": "Penosas Strike",
+      "en": "Penosas Strike"
+    },
+    "image": "/games/penosas-strike.webp",
+    "demo": "https://play.google.com/store/apps/details?id=com.SacroCuore.PenosasStrike&hl=pt_BR&gl=US",
+    "youtube": "https://www.youtube.com/watch?v=1BwDvgHKpX4"
+  },
+  {
+    "id": 9,
+    "name": {
+      "pt": "Math Factory",
+      "en": "Math Factory"
+    },
+    "image": "/games/math-factory.webp",
+    "demo": "https://lucaspzaranza.github.io/math-factory-page/",
+    "youtube": "https://youtu.be/R5HU1G4pQrA"
+  },
+  {
+    "id": 10,
+    "name": {
+      "pt": "Doom of the Penosas",
+      "en": "Doom of the Penosas"
+    },
+    "image": "/games/doom-of-the-penosas.webp",
+    "demo": "https://lucaspzaranza.github.io/doom-of-the-penosas-page/",
+    "youtube": "https://youtu.be/AWoCwXdrGpw"
+  },
+  {
+    "id": 11,
+    "name": {
+      "pt": "Jogo da Cobrinha",
+      "en": "Snake game"
+    },
+    "image": "/games/snake.webp",
+    "demo": "https://lucaspzaranza.github.io/snake-project-page/",
+    "youtube": "https://youtu.be/IKWWVx8-zis"
+  },
+  {
+    "id": 12,
+    "name": {
+      "pt": "Protótipo do Diep.io",
+      "en": "Diep.io Prototype"
+    },
+    "image": "/games/diep.io.webp",
+    "demo": "",
+    "youtube": "https://youtu.be/U4VpCUv47qw"
+  },
+  {
+    "id": 13,
+    "name": {
+      "pt": "Remake Bomberman 4",
+      "en": "Remake Bomberman 4"
+    },
+    "image": "/games/bomberman.webp",
+    "demo": "https://lucaspzaranza.github.io/super-bomberman4-remake-page/",
+    "youtube": "https://youtu.be/u_16YhfG-js"
+  },
+  {
+    "id": 14,
+    "name": {
+      "pt": "Carteira de Identidade",
+      "en": "Identity Card"
+    },
+    "image": "/games/rg.webp",
+    "demo": "https://lucaspzaranza.github.io/ab-carteira-identidade-webgl/",
+    "youtube": ""
+  },
+  {
+    "id": 15,
+    "name": {
+      "pt": "Emocionômetro",
+      "en": "Emotionmeter"
+    },
+    "image": "/games/emo-bears.webp",
+    "demo": "https://lucaspzaranza.github.io/ab-emocionometro-webgl/",
+    "youtube": ""
+  },
+  {
+    "id": 16,
+    "name": {
+      "pt": "Insta Filtros",
+      "en": "Insta Filters"
+    },
+    "image": "/games/zaza-kahlo.webp",
+    "demo": "https://lucaspzaranza.github.io/ab-insta-filtros-webgl/",
+    "youtube": ""
+  },
+  {
+    "id": 17,
+    "name": {
+      "pt": "Jogo da Malha",
+      "en": "Mesh Game"
+    },
+    "image": "/games/mesh-game.webp",
+    "demo": "https://lucaspzaranza.github.io/ab-jogo-da-malha-webgl/",
+    "youtube": ""
+  },
+  {
+    "id": 18,
+    "name": {
+      "pt": "Letra Cursiva",
+      "en": "Cursive Letter"
+    },
+    "image": "/games/letra-a.webp",
+    "demo": "https://lucaspzaranza.github.io/ab-letra-cursiva-webgl/",
+    "youtube": ""
+  },
+  {
+    "id": 19,
+    "name": {
+      "pt": "Jogo de Quebra-cabeça",
+      "en": "Puzzle Time"
+    },
+    "image": "/games/cat-puzzle.webp",
+    "demo": "https://lucaspzaranza.github.io/ab-quebra-cabeca-webgl/",
+    "youtube": ""
+  },
+  {
+    "id": 20,
+    "name": {
+      "pt": "Realidade x Fantasia",
+      "en": "Reality x Fantasy"
+    },
+    "image": "/games/fantasy-or-reality.webp",
+    "demo": "https://lucaspzaranza.github.io/ab-realidade-fantasia-webgl/",
+    "youtube": ""
+  },
+  {
+    "id": 21,
+    "name": {
+      "pt": "Jogo do Supermercado",
+      "en": "Supermarket Game"
+    },
+    "image": "/games/super-market-game.webp",
+    "demo": "https://lucaspzaranza.github.io/ab-supermarket-webgl/",
+    "youtube": ""
+  },
+  {
+    "id": 22,
+    "name": {
+      "pt": "Runner Infinito 2D",
+      "en": "2D Infinity Runner"
+    },
+    "image": "/games/robo-runner.webp",
+    "demo": "https://lucaspzaranza.github.io/procedural-runner-2D/",
+    "youtube": "https://youtu.be/rGbzTRhfKTw"
+  },
+  {
+    "id": 23,
+    "name": {
+      "pt": "Jogo de Limpar Copo",
+      "en": "Cup Cleaning Game"
+    },
+    "image": "/games/limpa-copo.webp",
+    "demo": "https://lucaspzaranza.github.io/limpa-copo-webgl/",
+    "youtube": ""
+  },
+  {
+    "id": 24,
+    "name": {
+      "pt": "Quiz do Amor",
+      "en": "Valentine's Quiz"
+    },
+    "image": "/games/love-quiz.webp",
+    "demo": "https://lucaspzaranza.github.io/love-quizz/",
+    "youtube": ""
+  }
+]

@@ -16,12 +16,12 @@ export const frontendProjects: FrontendProject[] = [
   },
   {
     key: "botbot",
-    image: "/frontend-projects/botbot.png",
+    image: "/frontend-projects/botbot.webp",
     tags: ["React", "TypeScript", "Tailwind", "ROSLIB"],
   },
   {
     key: "frontendPortfolio",
-    image: "/frontend-projects/frontend-portfolio.png",
+    image: "/frontend-projects/frontend-portfolio.webp",
     url: frontendPortfolioUrl,
     tags: ["Next.js", "TypeScript", "Tailwind"],
   },
