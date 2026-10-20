@@ -74,7 +74,7 @@ export function Header() {
         <Link
           href={`/${locale}`}
           aria-label={brandName}
-          className="flex items-center gap-3" 
+          className="flex items-center gap-3"
         >
           <Image
             src="/zaza-games-brand-kit-v4/gold-z.png"
@@ -84,7 +84,12 @@ export function Header() {
             className="h-9 w-auto shrink-0"
             unoptimized
           />
-          <span className={brandMini + " font-pixel text-[10px] text-white sm:hidden lg:inline lg:text-xs"}>
+          <span
+            className={
+              brandMini +
+              " font-pixel text-[10px] text-white sm:hidden lg:inline lg:text-xs"
+            }
+          >
             {brandName}
           </span>
         </Link>
@@ -100,9 +105,10 @@ export function Header() {
         <Link
           href={`/${otherLocale}`}
           hrefLang={otherLocale}
+          scroll={false}
           className="border-2 border-ink bg-snow px-3 py-1 font-pixel text-[10px] text-ink shadow-[2px_2px_0_0_#131a33] hover:bg-gold"
         >
-          {otherLocale.toUpperCase()}
+          {otherLocale === "pt" ? "PT" : "EN"}
         </Link>
       </nav>
     </header>
@@ -132,7 +138,7 @@ export function Hero() {
             ) : (
               <span className={brandTitle}>{brandName}</span>
             )}
-            <span className="mt-1 block text-sm text-gold-glow sm:text-xl">
+            <span className="mt-4 block text-sm text-gold-glow sm:text-xl">
               {t("title")}
             </span>
           </h1>
@@ -229,13 +235,13 @@ export function AllGames() {
   return (
     <section id="all-games" className="bg-snow px-6 pt-5 pb-20 text-ink">
       <div className="mx-auto max-w-5xl">
-        <details className="group">
+        <details className="group/games">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-6 border-b-4 border-ink pb-5 marker:hidden">
             <span>
               <span className="block font-pixel text-lg leading-relaxed text-royal-shadow sm:text-2xl">{t("title")}</span>
               <span className="mt-3 block text-sm">{t("expand")}</span>
             </span>
-            <span aria-hidden="true" className="shrink-0 font-pixel text-2xl text-royal-shadow transition-transform group-open:rotate-180">▼</span>
+            <span aria-hidden="true" className="shrink-0 font-pixel text-2xl text-royal-shadow transition-transform group-open/games:rotate-180">▼</span>
           </summary>
           <div className="grid gap-8 pt-8 sm:grid-cols-2 lg:grid-cols-3">
             {games.map((game) => (
