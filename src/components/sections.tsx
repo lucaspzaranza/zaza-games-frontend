@@ -48,7 +48,7 @@ function Section({ id, title, tone = "dark", children, spacing = "py-20" }: { id
   return (
     <section id={id} className={`${tones[tone].wrap} px-6 ${spacing}`}>
       <div className="mx-auto max-w-5xl">
-        <h2 className={`mb-8 font-pixel text-lg leading-relaxed sm:text-2xl ${tones[tone].heading}`}>{title.endsWith("?") ? title.slice(0, -1) : title}{(title.endsWith("?") || title === "Quem está por trás") && <Image src="/smw-question-block.png" alt="" aria-hidden="true" width={32} height={32} className="ml-1 mb-2 inline-block size-8 align-middle object-contain"  unoptimized/>}</h2>
+        <h2 className={`mb-8 font-pixel text-lg leading-relaxed sm:text-2xl ${tones[tone].heading}`}>{title.endsWith("?") ? title.slice(0, -1) : title}{(title.endsWith("?") || title === "Quem está por trás") && <Image src="/smw-question-block.png" alt="" aria-hidden="true" width={32} height={32} className="ml-1 relative -top-1.5 inline-block size-8 align-middle object-contain"  unoptimized/>}</h2>
         {children}
       </div>
     </section>
