@@ -85,7 +85,7 @@ export default function LiteYouTube({
 
       {active && (
         <div
-          className="fixed inset-0 z-[100] grid place-items-center bg-black/90 p-4 sm:p-8"
+          className="fixed inset-0 z-100 grid place-items-center bg-black/90 p-4 sm:p-8"
           role="presentation"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) setActive(false);
