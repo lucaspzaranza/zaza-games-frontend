@@ -1,7 +1,7 @@
 {
   "Meta": {
-    "title": "Zaza Games | Gamified Solutions for events, companies and education",
-    "description": "White label minigames, custom games and websites with games for events, companies, schools and parties. By Lucas Zaranza, game and frontend developer."
+    "title": "Zaza Games | Custom games for brands and events",
+    "description": "Custom games that engage audiences, teach skills and collect leads for events, businesses and schools. Explore Zaza Games solutions and request a proposal."
   },
   "Nav": {
     "gamification": "Gamification",
@@ -9,30 +9,37 @@
     "demos": "Demos",
     "about": "About",
     "contact": "Contact",
-    "frontend": "Web projects"
+    "frontend": "Web experiences"
   },
   "Hero": {
-    "title": "Gamified Solutions",
-    "subtitle": "Branded games that draw a crowd, hold attention and make people remember you.",
-    "ctaDemos": "Watch demos",
-    "ctaContact": "Talk to me"
+    "eyebrow": "Games for brands, businesses and learning",
+    "title": "Your audience plays. Your brand stays memorable.",
+    "subtitle": "From a branded mini-game to a custom-built game that engages, teaches or captures leads.",
+    "proofs": [
+      "Your brand, colors and prizes",
+      "Rankings and player sign-ups",
+      "Runs on phones and computers, with no install"
+    ],
+    "ctaDemos": "See games in action",
+    "ctaContact": "Request a proposal"
   },
   "Gamification": {
-    "title": "What is gamification?",
-    "intro": "It means using the logic of games (challenge, score, reward and ranking) to capture attention, teach and engage. From a gender reveal party to a company convention, the game becomes the center of the experience.",
+    "title": "Why does a game hold attention better than a banner?",
+    "intro": "Challenges, choices and rewards invite people to take part. The same approach can introduce a brand, teach a subject or bring a celebration to life.",
     "items": [
-      { "title": "Events", "text": "Activations at trade shows and brand campaigns, with rankings, data capture and a custom look." },
-      { "title": "Companies", "text": "Trainings, internal campaigns and customer actions that people join because they want to." },
-      { "title": "Education", "text": "Educational games that run right in the browser, on desktop or mobile." },
-      { "title": "Parties", "text": "Gender reveals, birthdays and quizzes that liven up the whole party." }
+      { "title": "Events", "text": "Turn your booth into an interactive activation. Rankings and sign-ups for interested participants can be part of the game." },
+      { "title": "Businesses", "text": "Present training, internal campaigns and customer activities as experiences people are invited to join." },
+      { "title": "Education", "text": "Help students practice through play on a phone or computer, without installing an app." },
+      { "title": "Parties", "text": "Gender reveals, birthdays or bridal parties: entertain guests and reveal the prize on the spot." },
+      { "title": "Businesses and schools", "text": "Have a service or subject that could use an interactive experience? I can build ideas such as a tooth-brushing game for a dental office or a music app for lessons." }
     ]
   },
   "Offer": {
-    "title": "How can I help?",
+    "title": "3 ways to bring a game to your project",
     "items": [
-      { "title": "Ready-made minigames (white label)", "text": "Roulette, Flappy Bird, Memory Game, Slot Machine and more, with your brand, colors and prizes." },
-      { "title": "Custom development", "text": "A game built from scratch for your idea, from design to release." },
-      { "title": "Websites with games", "text": "React and Next.js websites with games built in, for campaigns and online activations." }
+      { "title": "A mini-game with your brand", "text": "Choose a ready-made base, such as roulette, Flappy Bird or Memory, then customize its look, colors and prizes for your campaign." },
+      { "title": "Custom-built game", "text": "We start with your business goal, then design, build and publish an experience made for your idea." },
+      { "title": "Online campaign with a game", "text": "Bring your campaign and game together on a web page. Sign-ups and rankings can be included to fit the goal and scope." }
     ]
   },
   "Demos": {
@@ -43,7 +50,7 @@
     "items": [
       { "title": "Roulette", "text": "Draws and prizes for events." },
       { "title": "Flappy Bird", "text": "A classic with your brand identity." },
-      { "title": "Slot Machine", "text": "Combos and giveaways on the spot." },
+      { "title": "Prize Machine", "text": "Combos and giveaways on the spot." },
       { "title": "Memory Game", "text": "Great for kids and educational actions." }
     ]
   },
@@ -66,19 +73,19 @@
       },
       "gamePortfolio": {
         "title": "Game Dev landing page",
-      "text": "My professional landing page, dedicated exclusively to my work as a game developer."
+        "text": "My professional landing page, dedicated exclusively to my work as a game developer."
       }
     }
   },
   "About": {
     "title": "Who is behind it",
-    "intro": "I'm Lucas Zaranza (Zazá), a fullstack developer with over 10 years of experience. I started making games with Unity3D and C#, and today I also build web interfaces with React, Next.js and TypeScript. Combining both is what Zaza Games is about.",
+    "intro": "One developer follows each stage — design, programming, pixel art, music and publishing. You work directly with the person building your game, with fewer hand-offs and faster decisions. I'm Lucas Zaranza (Zazá), a fullstack developer with over 10 years of professional experience bringing games and web together.",
     "gamesTitle": "Game development",
     "games": [
       {
         "year": "2014–2015",
         "title": "Touch Midia",
-        "text": "Games for corporate events on touch screens (Roulette, Flappy Bird, Slot Machine and Memory), with rankings, data capture and customizable charts."
+        "text": "Games for corporate events on touch screens (Roulette, Flappy Bird, Prize Machine and Memory), with rankings, player sign-ups and customizable visuals."
       },
       {
         "year": "2018",
@@ -102,25 +109,11 @@
       }
     ],
     "gamesLink": "See my full game portfolio",
-    "frontendLink": "See my full websites portfolio",
-    "frontTitle": "Web development",
+    "frontendLink": "See more web projects",
+    "frontTitle": "From concept to launch",
     "front": [
-      {
-        "title": "Zazastro",
-        "text": "Astrology web app built from scratch, with interactive SVG charts using D3.js, Next.js and multiple languages."
-      },
-      {
-        "title": "My frontend portfolio",
-      "text": "Personal portfolio built with React, Next.js, TypeScript and Tailwind CSS."
-      },
-      {
-        "title": "Robot dashboard",
-        "text": "React dashboard to monitor and command robots, with cameras and an AI chat."
-      },
-      {
-        "title": "Landing pages",
-      "text": "Landing pages I created for different projects, services and businesses, including my professional page focused on game development."
-      }
+      { "title": "Direct collaboration", "text": "We align on the goal, shape the experience, build it and publish it together." },
+      { "title": "One developer, many skills", "text": "Design, programming, pixel art and music can come together in one project, depending on scope." }
     ]
   },
   "Games": {
@@ -132,7 +125,9 @@
   },
   "Contact": {
     "title": "Let's gamify your project?",
-    "text": "Tell me your idea and I'll reply with a proposal.",
+    "text": "Share your goal, audience and timeline. We can find a game format that fits your project.",
+    "whatsapp": "Request a proposal on WhatsApp",
+    "whatsappMessage": "Hi, Zazá! I'd like to talk about a game for my project.",
     "email": "Email",
     "instagram": "Instagram"
   }

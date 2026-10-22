@@ -32,8 +32,8 @@
   {
     "id": 5,
     "name": {
-      "pt": "Caça-Níqueis",
-      "en": "Slot Machine"
+      "pt": "Máquina de Prêmios",
+      "en": "Prize Machine"
     },
     "image": "/games/slot-machine.webp",
     "demo": "https://lucaspzaranza.github.io/slot-machine-page/",

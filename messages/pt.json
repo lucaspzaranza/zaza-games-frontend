@@ -1,7 +1,7 @@
 {
   "Meta": {
-    "title": "Zaza Games | Soluções Gamificadas para eventos, empresas e educação",
-    "description": "Minigames white label, jogos sob medida e sites com games para eventos, empresas, escolas e festas. Por Lucas Zaranza, desenvolvedor de jogos e frontend."
+    "title": "Zaza Games | Jogos personalizados para marcas e eventos",
+    "description": "Jogos personalizados para engajar públicos, ensinar conteúdos e captar contatos em eventos, empresas e escolas. Conheça as soluções da Zaza Games e peça uma proposta."
   },
   "Nav": {
     "gamification": "Gamificação",
@@ -9,30 +9,37 @@
     "demos": "Demos",
     "about": "Quem faz",
     "contact": "Contato",
-    "frontend": "Projetos web"
+    "frontend": "Experiências web"
   },
   "Hero": {
-    "title": "Soluções Gamificadas",
-    "subtitle": "Jogos com a cara da sua marca que juntam gente, prendem a atenção e fazem o público lembrar de você.",
-    "ctaDemos": "Ver demos",
-    "ctaContact": "Falar comigo"
+    "eyebrow": "Jogos para marcas, negócios e educação",
+    "title": "Seu público joga. Sua marca fica na memória.",
+    "subtitle": "Do minigame com a sua marca ao jogo feito sob medida, para engajar, ensinar ou captar contatos.",
+    "proofs": [
+      "Sua marca, cores e prêmios",
+      "Ranking e cadastro de jogadores",
+      "Abre no celular e no computador, sem instalar nada"
+    ],
+    "ctaDemos": "Ver jogos em ação",
+    "ctaContact": "Quero uma proposta"
   },
   "Gamification": {
-    "title": "O que é gamificar?",
-    "intro": "É usar a lógica dos jogos (desafio, pontuação, recompensa e ranking) para prender a atenção, ensinar e engajar. Do chá revelação à convenção de empresa, o jogo vira o centro da experiência.",
+    "title": "Por que um jogo prende mais que um banner?",
+    "intro": "Desafios, escolhas e recompensas convidam as pessoas a participar. A mesma lógica pode apresentar uma marca, ensinar um conteúdo ou animar uma comemoração.",
     "items": [
-      { "title": "Eventos", "text": "Ativações em feiras e ações de marca, com ranking, captação de dados e visual personalizado." },
-      { "title": "Empresas", "text": "Treinamentos, campanhas internas e ações com clientes que as pessoas fazem por vontade própria." },
-      { "title": "Educação", "text": "Jogos educativos que rodam direto no navegador, no computador ou no celular." },
-      { "title": "Festas", "text": "Chá revelação, aniversários e quizzes que animam a festa inteira." }
+      { "title": "Eventos", "text": "Transforme seu estande em uma ativação interativa. O jogo pode incluir ranking e cadastro de participantes interessados." },
+      { "title": "Empresas", "text": "Apresente treinamentos, campanhas internas e ações com clientes em experiências que convidam à participação." },
+      { "title": "Educação", "text": "Ajude alunos a praticar conteúdos brincando, pelo celular ou computador, sem instalar um aplicativo." },
+      { "title": "Festas", "text": "Chá revelação, aniversário ou festa de noiva: anime os convidados e revele o prêmio na hora." },
+      { "title": "Negócios e escolas", "text": "Tem um serviço ou conteúdo que merece uma experiência interativa? Posso criar algo como um jogo de escovação para consultórios ou um app musical para aulas." }
     ]
   },
   "Offer": {
-    "title": "Como posso ajudar?",
+    "title": "3 formas de levar um jogo ao seu projeto",
     "items": [
-      { "title": "Minigames prontos (white label)", "text": "Roleta, Flappy Bird, Jogo da Memória, Caça-Níqueis e outros, com a sua marca, cores e prêmios." },
-      { "title": "Desenvolvimento sob medida", "text": "Um jogo criado do zero para a sua ideia, do design à publicação." },
-      { "title": "Sites com games", "text": "Sites em React e Next.js com jogos integrados, para campanhas e ações online." }
+      { "title": "Minigame com a sua marca", "text": "Escolha uma base pronta — como roleta, Flappy Bird ou memória — e personalize visual, cores e prêmios para sua ação." },
+      { "title": "Jogo sob medida", "text": "Partimos do objetivo do seu negócio para desenhar, programar e publicar uma experiência feita para a sua ideia." },
+      { "title": "Campanha online com game", "text": "Reúna a campanha e o jogo em uma página web. Cadastro de interessados e ranking podem entrar conforme o objetivo e o escopo." }
     ]
   },
   "Demos": {
@@ -43,7 +50,7 @@
     "items": [
       { "title": "Roleta", "text": "Sorteios e prêmios para eventos." },
       { "title": "Flappy Bird", "text": "Clássico com a identidade da sua marca." },
-      { "title": "Caça-Níqueis", "text": "Combinações e brindes na hora." },
+      { "title": "Máquina de Prêmios", "text": "Combinações e brindes na hora." },
       { "title": "Jogo da Memória", "text": "Perfeito para crianças e ações educativas." }
     ]
   },
@@ -54,7 +61,7 @@
     "items": {
       "zazastro": {
         "title": "Zazastro",
-        "text": "Aplicação de astrologia criada do zero, com mapas interativos em SVG e D3.js, rotas compartilháveis por link e várias línguas."
+        "text": "Aplicação de astrologia criada do zero, com mapas interativos em SVG e D3.js, rotas compartilháveis por link e vários idiomas."
       },
       "botbot": {
         "title": "Dashboard de robôs",
@@ -66,31 +73,27 @@
       },
       "gamePortfolio": {
         "title": "Landing page de Game Dev",
-      "text": "Minha landing page profissional, dedicada exclusivamente ao meu trabalho como desenvolvedor de games."
+        "text": "Minha landing page profissional, dedicada exclusivamente ao meu trabalho como desenvolvedor de games."
       }
     }
   },
   "About": {
     "title": "Quem está por trás",
-    "intro": "Sou o Lucas Zaranza (o Zazá), desenvolvedor fullstack com mais de 10 anos de experiência. Comecei criando jogos com Unity3D e C# e hoje também construo interfaces web com React, Next.js e TypeScript. Unir as duas coisas é o que faz a Zaza Games.",
+    "intro": "Um único desenvolvedor acompanha cada etapa — design, programação, pixel art, trilha e publicação. Você conversa direto com quem cria o jogo, com menos intermediários e decisões mais rápidas. Sou Lucas Zaranza (o Zazá), desenvolvedor fullstack com mais de 10 anos de experiência profissional, unindo jogos e web.",
     "gamesTitle": "Desenvolvimento de jogos",
     "games": [
-      { "year": "2014–2015", "title": "Touch Midia", "text": "Jogos para eventos corporativos em telas touch (Roleta, Flappy Bird, Caça-Níqueis e Memória), com ranking, captação de dados e gráficos customizáveis." },
+      { "year": "2014–2015", "title": "Touch Midia", "text": "Jogos para eventos corporativos em telas touch (Roleta, Flappy Bird, Máquina de Prêmios e Memória), com ranking, captação de dados e gráficos customizáveis." },
       { "year": "2018", "title": "Penosas Strike", "text": "Jogo mobile feito por mim do zero (programação, pixel art e trilha), publicado na Google Play." },
       { "year": "2020", "title": "Doom of the Penosas", "text": "Shoot'em up com multiplayer e demo em WebGL." },
       { "year": "2022", "title": "Jogos educativos WebGL", "text": "Série de jogos freelance, responsivos para celular e computador." },
       { "year": "2024", "title": "Freelances WebGL", "text": "Jogo do Dia Mundial da Água e Quiz de Dia dos Namorados." }
     ],
     "gamesLink": "Ver portfólio completo de games",
-    "frontendLink": "Ver portfólio completo websites",
-    "frontTitle": "Desenvolvimento web",
+    "frontendLink": "Ver outros projetos web",
+    "frontTitle": "Do conceito à publicação",
     "front": [
-      { "title": "Zazastro", "text": "Aplicação web de astrologia criada do zero, com mapas interativos em SVG e D3.js, Next.js e várias línguas." },
-      { "title": "Meu portfólio frontend",
-      "text": "Portfólio pessoal com React, Next.js, TypeScript e Tailwind CSS." },
-      { "title": "Dashboard de robôs", "text": "Painel em React para monitorar e comandar robôs, com câmeras e chat com IA." },
-      { "title": "Landing pages",
-      "text": "Landing pages desenvolvidas para diferentes projetos, serviços e negócios, incluindo minha página profissional focada em desenvolvimento de games." }
+      { "title": "Atendimento direto", "text": "Alinhamos o objetivo, definimos a experiência, desenvolvemos e publicamos o projeto juntos." },
+      { "title": "Um profissional, várias frentes", "text": "Design, programação, pixel art e trilha podem ser reunidos no mesmo projeto, conforme o escopo." }
     ]
   },
   "Games": {
@@ -102,7 +105,9 @@
   },
   "Contact": {
     "title": "Vamos gamificar o seu projeto?",
-    "text": "Conte sua ideia e eu respondo com uma proposta.",
+    "text": "Conte o objetivo, o público e o prazo do seu projeto. Vamos encontrar um formato de jogo que faça sentido para ele.",
+    "whatsapp": "Pedir proposta pelo WhatsApp",
+    "whatsappMessage": "Oi, Zazá! Quero conversar sobre um jogo para o meu projeto.",
     "email": "E-mail",
     "instagram": "Instagram"
   }

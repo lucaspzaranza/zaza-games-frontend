@@ -5,25 +5,19 @@ import Logo from "./Logo";
 import { demoVideoIds } from "@/data/demos";
 import { contactEmail, frontendPortfolioUrl, gamePortfolioUrl, instagramUrl } from "@/config/site";
 import { frontendProjects } from "@/data/frontendProjects";
+import TrackedAnchor from "./TrackedAnchor";
 import Image from "next/image";
 import games from "@/data/games.json";
 
 type Item = { title: string; text: string };
 type GameItem = Item & { year: string };
 const brandName = "Zaza Games";
-// "logo" = pixel art logo, "text" = Press Start 2P title with the JRPG gradient
-const heroBrand: "logo" | "text" = "logo";
 // Use the real pixel size of the PNG (right click > Properties > Details)
 const heroLogo = { src: "/zaza-games-brand-kit-v4/zaza-logo-blue-bg-x10-no-badge.png", width: 640, height: 320 };
 
 const card = "border-4 border-ink bg-white p-5 text-ink shadow-[6px_6px_0_0_#131a33]";
 const cardTitle = "mb-3 font-pixel text-xs leading-relaxed text-royal-shadow";
 const button = "inline-block border-4 border-ink px-5 py-3 font-pixel text-xs shadow-[4px_4px_0_0_#131a33] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none";
-
-const brandTitle =
-  "block max-w-[760px] text-[clamp(30px,5vw,56px)] leading-[1.55] tracking-[-1.7px] max-[640px]:text-[clamp(22px,7vw,34px)] " +
-  "bg-[linear-gradient(180deg,#fff_0%,#e4ecff_55%,#c4d4ff_100%)] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] " +
-  "[filter:drop-shadow(1px_0_0_#0a1050)_drop-shadow(-1px_0_0_#0a1050)_drop-shadow(0_1px_0_#0a1050)_drop-shadow(0_-1px_0_#0a1050)_drop-shadow(3px_4px_0_#000018)]";
 
 const brandMini =
   "bg-[linear-gradient(180deg,#fff_0%,#e4ecff_55%,#c4d4ff_100%)] bg-clip-text text-transparent [-webkit-text-fill-color:transparent] " +
@@ -117,40 +111,58 @@ export function Header() {
 
 export function Hero() {
   const t = useTranslations("Hero");
+  const proofs = t.raw("proofs") as string[];
   return (
-    <section className={`bg-royal px-6 py-24 ${gamePattern}`}>
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 text-center md:flex-row md:text-left">
-        <Logo height={160} />
+    <section className={`bg-royal px-6 py-10 sm:py-12 md:py-20 ${gamePattern}`}>
+      <div className="mx-auto max-w-5xl text-center md:text-left">
         <div>
-          <h1 className="font-pixel">
-            {heroBrand === "logo" ? (
-              <Image
-                src={heroLogo.src}
-                width={heroLogo.width}
-                height={heroLogo.height}
-                alt={brandName}
-                unoptimized
-                loading="eager"
-                fetchPriority="high"
-                className="mx-auto block h-auto w-[420px] max-w-full md:mx-0"
-                // style={{ imageRendering: "pixelated" }}
-              />
-            ) : (
-              <span className={brandTitle}>{brandName}</span>
-            )}
-            <span className="mt-4 block text-sm text-gold-glow sm:text-xl">
-              {t("title")}
-            </span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg">{t("subtitle")}</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
-            <a href="#demos" className={`${button} bg-gold text-ink`}>
-              {t("ctaDemos")}
-            </a>
-            <a href="#contact" className={`${button} bg-snow text-ink`}>
-              {t("ctaContact")}
-            </a>
+          <div className="flex items-center justify-center gap-2 md:justify-start md:gap-3">
+            <Logo height={144} className="h-12 w-12 shrink-0 md:h-36 md:w-36" />
+            <Image
+              src={heroLogo.src}
+              width={heroLogo.width}
+              height={heroLogo.height}
+              alt=""
+              aria-hidden="true"
+              unoptimized
+              loading="eager"
+              fetchPriority="high"
+              className="block h-auto w-54 max-w-full md:w-56"
+            />
           </div>
+          <p className="mt-4 font-pixel text-[11px] leading-relaxed text-gold-glow sm:text-sm">
+            {t("eyebrow")}
+          </p>
+          <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            {t("title")}
+          </h1>
+          <h2 className="mt-5 max-w-2xl text-lg leading-relaxed text-white/90 sm:text-xl">
+            {t("subtitle")}
+          </h2>
+          <div className="mt-6 flex flex-wrap justify-center gap-4 md:justify-start">
+            <TrackedAnchor
+              href="#contact"
+              event={{ event: "cta_click", cta_location: "hero", cta_label: "proposal" }}
+              className={`${button} bg-gold text-ink`}
+            >
+              {t("ctaContact")}
+            </TrackedAnchor>
+            <TrackedAnchor
+              href="#demos"
+              event={{ event: "cta_click", cta_location: "hero", cta_label: "demos" }}
+              className={`${button} bg-snow text-ink`}
+            >
+              {t("ctaDemos")}
+            </TrackedAnchor>
+          </div>
+          <ul className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm md:justify-start">
+            {proofs.map((proof) => (
+              <li key={proof} className="flex items-center gap-2">
+                <span aria-hidden="true" className="font-bold text-gold-glow">✓</span>
+                <span>{proof}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
@@ -270,14 +282,15 @@ export function AllGames() {
                 <div className="flex flex-wrap items-center justify-between gap-4 p-4">
                   <h3 className="font-pixel text-xs leading-relaxed text-royal-shadow">{game.name[locale]}</h3>
                   {game.demo && (
-                    <a
+                    <TrackedAnchor
                       href={game.demo}
                       target="_blank"
                       rel="noopener noreferrer"
+                      event={{ event: "demo_open", game_name: game.name[locale] }}
                       className="border-2 border-ink bg-royal px-3 py-2 font-pixel text-[10px] text-white shadow-[2px_2px_0_0_#131a33] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
                     >
                       {t("demo")}
-                    </a>
+                    </TrackedAnchor>
                   )}
                 </div>
               </article>
@@ -399,12 +412,41 @@ export function About() {
 
 export function Contact() {
   const t = useTranslations("Contact");
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
+  const whatsappUrl = whatsappNumber
+    ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(t("whatsappMessage"))}`
+    : undefined;
   return (
     <Section id="contact" title={t("title")} tone="royal">
       <p className="mb-8 max-w-2xl text-lg">{t("text")}</p>
       <div className="flex flex-wrap gap-4">
-        <a href={`mailto:${contactEmail}`} className={`${button} bg-gold text-ink`}>{t("email")}</a>
-        <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className={`${button} bg-snow text-ink`}>{t("instagram")}</a>
+        {whatsappUrl && (
+          <TrackedAnchor
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            event={{ event: "contact_click", contact_method: "whatsapp" }}
+            className={`${button} bg-gold text-ink`}
+          >
+            {t("whatsapp")}
+          </TrackedAnchor>
+        )}
+        <TrackedAnchor
+          href={`mailto:${contactEmail}`}
+          event={{ event: "contact_click", contact_method: "email" }}
+          className={`${button} ${whatsappUrl ? "bg-snow" : "bg-gold"} text-ink`}
+        >
+          {t("email")}
+        </TrackedAnchor>
+        <TrackedAnchor
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          event={{ event: "contact_click", contact_method: "instagram" }}
+          className={`${button} bg-snow text-ink`}
+        >
+          {t("instagram")}
+        </TrackedAnchor>
       </div>
     </Section>
   );

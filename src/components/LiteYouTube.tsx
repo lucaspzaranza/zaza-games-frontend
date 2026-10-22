@@ -1,6 +1,68 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/analytics";
+
+type YouTubePlayer = {
+  destroy: () => void;
+  getCurrentTime: () => number;
+  getDuration: () => number;
+  playVideo: () => void;
+};
+
+type YouTubePlayerState = { data: number };
+type YouTubePlayerReady = { target: YouTubePlayer };
+
+type YouTubeApi = {
+  Player: new (
+    element: HTMLElement,
+    options: {
+      events: {
+        onReady: (event: YouTubePlayerReady) => void;
+        onStateChange: (event: YouTubePlayerState) => void;
+      };
+    },
+  ) => YouTubePlayer;
+};
+
+declare global {
+  interface Window {
+    YT?: YouTubeApi;
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
+let youtubeApiPromise: Promise<void> | undefined;
+
+function loadYouTubeIframeApi() {
+  if (window.YT?.Player) return Promise.resolve();
+  if (youtubeApiPromise) return youtubeApiPromise;
+
+  youtubeApiPromise = new Promise<void>((resolve, reject) => {
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[src="https://www.youtube.com/iframe_api"]',
+    );
+    const previousCallback = window.onYouTubeIframeAPIReady;
+
+    window.onYouTubeIframeAPIReady = () => {
+      previousCallback?.();
+      resolve();
+    };
+
+    if (existingScript) {
+      existingScript.addEventListener("error", () => reject(new Error("YouTube API failed to load.")), { once: true });
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://www.youtube.com/iframe_api";
+    script.async = true;
+    script.onerror = () => reject(new Error("YouTube API failed to load."));
+    document.head.appendChild(script);
+  });
+
+  return youtubeApiPromise;
+}
 
 type Props = {
   id: string;
@@ -22,8 +84,12 @@ export default function LiteYouTube({
   portrait = false,
 }: Props) {
   const [active, setActive] = useState(false);
+  const [apiFailed, setApiFailed] = useState(false);
+  const [playerOrigin, setPlayerOrigin] = useState("");
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const playerRef = useRef<HTMLIFrameElement>(null);
+  const watchedProgressRef = useRef(new Set<number>());
 
   useEffect(() => {
     if (!active) return;
@@ -44,6 +110,70 @@ export default function LiteYouTube({
     };
   }, [active]);
 
+  useEffect(() => {
+    if (!active || apiFailed) return;
+
+    let cancelled = false;
+    let player: YouTubePlayer | undefined;
+    let progressInterval: number | undefined;
+    let started = false;
+    watchedProgressRef.current = new Set<number>();
+
+    const trackProgress = (finished = false) => {
+      if (!player) return;
+      const duration = player.getDuration();
+      const percent = finished
+        ? 100
+        : duration > 0
+          ? (player.getCurrentTime() / duration) * 100
+          : 0;
+
+      for (const mark of [25, 50, 75, 100]) {
+        if (percent >= mark && !watchedProgressRef.current.has(mark)) {
+          watchedProgressRef.current.add(mark);
+          trackEvent({ event: "video_progress", game_name: title, percent: mark });
+        }
+      }
+    };
+
+    void loadYouTubeIframeApi()
+      .then(() => {
+        if (cancelled || !playerRef.current || !window.YT) return;
+
+        player = new window.YT.Player(playerRef.current, {
+          events: {
+            onReady: (event) => event.target.playVideo(),
+            onStateChange: (event) => {
+              if (event.data === 1) {
+                if (!started) {
+                  started = true;
+                  trackEvent({ event: "video_start", game_name: title });
+                }
+                if (progressInterval === undefined) {
+                  progressInterval = window.setInterval(() => trackProgress(), 1000);
+                }
+              } else {
+                if (progressInterval !== undefined) {
+                  window.clearInterval(progressInterval);
+                  progressInterval = undefined;
+                }
+                if (event.data === 0) trackProgress(true);
+              }
+            },
+          },
+        });
+      })
+      .catch(() => {
+        if (!cancelled) setApiFailed(true);
+      });
+
+    return () => {
+      cancelled = true;
+      if (progressInterval !== undefined) window.clearInterval(progressInterval);
+      player?.destroy();
+    };
+  }, [active, apiFailed, id, title]);
+
   const playerSize = portrait
     ? "aspect-[9/16] h-[min(85svh,800px)] max-w-[90vw]"
     : "aspect-video w-[min(92vw,1280px)] max-h-[85svh]";
@@ -54,7 +184,12 @@ export default function LiteYouTube({
         <button
           ref={triggerRef}
           type="button"
-          onClick={() => setActive(true)}
+          onClick={() => {
+            setApiFailed(false);
+            setPlayerOrigin(window.location.origin);
+            setActive(true);
+            trackEvent({ event: "demo_open", game_name: title });
+          }}
           aria-label={`${playLabel}: ${title}`}
           className="group absolute inset-0 h-full w-full"
         >
@@ -107,8 +242,9 @@ export default function LiteYouTube({
               ×
             </button>
             <iframe
+              ref={playerRef}
               className="absolute inset-0 h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1`}
+              src={`https://www.youtube-nocookie.com/embed/${id}?enablejsapi=1&playsinline=1${playerOrigin ? `&origin=${encodeURIComponent(playerOrigin)}` : ""}${apiFailed ? "&autoplay=1" : ""}`}
               title={title}
               allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
               allowFullScreen
