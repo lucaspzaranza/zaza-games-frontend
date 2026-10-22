@@ -114,12 +114,12 @@
     "instagram": "Instagram"
   },
   "CookieConsent": {
-    "title": "Sua privacidade, suas escolhas",
-    "description": "Usamos armazenamento necessário para lembrar suas preferências. Com sua autorização, medimos como a página é usada, ativamos publicidade ou carregamos vídeos do YouTube. Você pode aceitar, rejeitar os opcionais ou escolher por categoria.",
+    "title": "Cookies e privacidade",
+    "description": "Usamos cookies opcionais para análise, publicidade e vídeos do YouTube. Você escolhe o que autorizar.",
     "privacyLink": "Aviso de privacidade e cookies",
-    "reject": "Rejeitar opcionais",
-    "customize": "Escolher por categoria",
-    "acceptAll": "Aceitar todos",
+    "reject": "Recusar",
+    "customize": "Personalizar",
+    "acceptAll": "Aceitar",
     "settingsTitle": "Preferências de privacidade",
     "settingsIntro": "As categorias opcionais começam desativadas. Sua escolha fica salva neste navegador por até 180 dias e pode ser alterada depois.",
     "necessaryTitle": "Armazenamento necessário",

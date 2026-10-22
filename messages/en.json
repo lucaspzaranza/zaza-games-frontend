@@ -134,12 +134,12 @@
     "instagram": "Instagram"
   },
   "CookieConsent": {
-    "title": "Your privacy, your choice",
-    "description": "We use necessary browser storage to remember your preferences. With your permission, we measure how the page is used, enable advertising, or load YouTube videos. You can accept, reject optional categories, or choose by category.",
+    "title": "Cookies and privacy",
+    "description": "We use optional cookies for analytics, advertising, and YouTube videos. You choose what to allow.",
     "privacyLink": "Privacy and cookie notice",
-    "reject": "Reject optional",
-    "customize": "Choose by category",
-    "acceptAll": "Accept all",
+    "reject": "Reject",
+    "customize": "Customize",
+    "acceptAll": "Accept",
     "settingsTitle": "Privacy preferences",
     "settingsIntro": "Optional categories are off by default. Your choice is saved in this browser for up to 180 days and can be changed later.",
     "necessaryTitle": "Necessary storage",

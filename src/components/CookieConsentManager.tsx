@@ -101,27 +101,31 @@ export default function CookieConsentManager({ gtmId: gtmIdProp = "" }: { gtmId?
         <section
           aria-labelledby="cookie-consent-title"
           aria-live="polite"
-          className="fixed inset-x-0 bottom-0 z-50 px-3 pb-3 sm:px-6 sm:pb-6"
+          className={panel === "banner"
+            ? "fixed bottom-4 left-4 right-4 z-50 sm:left-auto sm:w-[380px]"
+            : "fixed inset-x-0 bottom-0 z-50 px-3 pb-3 sm:px-6 sm:pb-6"}
         >
-          <div className="mx-auto max-h-[85svh] max-w-5xl overflow-y-auto border-4 border-ink bg-snow p-5 text-ink shadow-[8px_8px_0_0_#131a33] sm:p-6">
+          <div className={`max-h-[85svh] overflow-y-auto border-4 border-ink bg-snow p-4 text-ink shadow-[6px_6px_0_0_#131a33] sm:p-5 ${panel === "banner" ? "w-full" : "mx-auto w-full max-w-5xl"}`}>
             {panel === "banner" ? (
               <>
-                <h2 id="cookie-consent-title" className="font-pixel text-sm leading-relaxed text-royal-shadow sm:text-base">
+                <h2 id="cookie-consent-title" className="font-pixel text-xs leading-relaxed text-royal-shadow sm:text-sm">
                   {t("title")}
                 </h2>
-                <p className="mt-3 max-w-4xl text-sm leading-relaxed sm:text-base">{t("description")}</p>
-                <Link href={`/${locale}/privacy`} className="mt-2 inline-block text-sm text-royal-shadow underline underline-offset-4">
-                  {t("privacyLink")}
-                </Link>
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <button type="button" onClick={() => applyChoices(deniedConsent)} className="border-2 border-ink bg-white px-4 py-2 font-pixel text-[10px] shadow-[3px_3px_0_0_#131a33] hover:bg-gold">
-                    {t("reject")}
-                  </button>
-                  <button type="button" onClick={() => { setDraft(consent ?? deniedConsent); setPanel("settings"); }} className="border-2 border-ink bg-white px-4 py-2 font-pixel text-[10px] shadow-[3px_3px_0_0_#131a33] hover:bg-gold">
+                <p className="mt-2 text-xs leading-relaxed sm:text-sm">{t("description")}</p>
+                <div className="mt-1 flex flex-wrap items-center justify-between gap-x-2">
+                  <Link href={`/${locale}/privacy`} className="inline-flex min-h-11 items-center text-xs text-royal-shadow underline underline-offset-4">
+                    {t("privacyLink")}
+                  </Link>
+                  <button type="button" onClick={() => { setDraft(consent ?? deniedConsent); setPanel("settings"); }} className="inline-flex min-h-11 items-center border-2 border-ink/40 px-3 text-xs font-medium text-royal-shadow underline underline-offset-4 hover:bg-royal/5 hover:text-ink focus-visible:outline-2 focus-visible:outline-royal">
                     {t("customize")}
                   </button>
-                  <button type="button" onClick={() => applyChoices({ analytics: true, marketing: true, externalMedia: true })} className="border-2 border-ink bg-white px-4 py-2 font-pixel text-[10px] shadow-[3px_3px_0_0_#131a33] hover:bg-gold">
+                </div>
+                <div className="mt-2 grid grid-cols-2 gap-2 sm:gap-3">
+                  <button type="button" onClick={() => applyChoices({ analytics: true, marketing: true, externalMedia: true })} className="min-h-11 border-2 border-ink bg-white px-3 py-2 text-xs font-semibold shadow-[2px_2px_0_0_#131a33] hover:bg-gold sm:text-sm">
                     {t("acceptAll")}
+                  </button>
+                  <button type="button" onClick={() => applyChoices(deniedConsent)} className="min-h-11 border-2 border-ink bg-white px-3 py-2 text-xs font-semibold shadow-[2px_2px_0_0_#131a33] hover:bg-gold sm:text-sm">
+                    {t("reject")}
                   </button>
                 </div>
               </>
