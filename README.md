@@ -1,10 +1,12 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Landing page contact and event tracking
+## Contact, analytics and advertising
 
 Set `NEXT_PUBLIC_WHATSAPP_NUMBER` to the contact number in international format, using digits only (country code, area code and number). The WhatsApp proposal button is shown only when this value is set.
 
-The landing page pushes `cta_click`, `contact_click`, `demo_open`, `video_start` and `video_progress` events to `window.dataLayer`. No Google Tag Manager container, analytics account or ad pixel is loaded by default. Connect a GTM container and configure the site's privacy and consent experience before sending these events to analytics or advertising services.
+The site now includes a consent banner in Portuguese and English. Optional analytics, advertising and YouTube media stay off until the visitor opts in. To activate tags, set `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX` in `.env.local` and in the production environment, then redeploy. The same consent manager initializes Google Consent Mode v2 and loads the GTM container only after analytics or advertising consent. If the variable is empty, no GTM, GA4 or ad pixel is loaded.
+
+GA4, Meta Pixel, TikTok Pixel and Google Ads tags are configured inside your GTM account; their account IDs are not hard-coded in this project. The page sends `page_view`, `cta_click`, `contact_click`, `demo_open`, `video_start` and `video_progress` events to `window.dataLayer` only after analytics or advertising consent, with `analytics_consent` and `marketing_consent` flags so each destination can be gated correctly. YouTube thumbnails and players also wait for the separate external-media choice. See [the setup guide](docs/marketing-tracking.md) for GTM tag triggers, consent rules and launch checks.
 
 ## Getting Started
 

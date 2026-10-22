@@ -18,7 +18,7 @@
     "proofs": [
       "Sua marca, cores e prêmios",
       "Ranking e cadastro de jogadores",
-      "Abre no celular e no computador, sem instalar nada"
+      "Celular e computador, sem instalar"
     ],
     "ctaDemos": "Ver jogos em ação",
     "ctaContact": "Quero uma proposta"
@@ -46,6 +46,7 @@
     "title": "Veja em ação",
     "intro": "Alguns dos jogos que podem virar o seu. Clique para assistir.",
     "play": "Assistir",
+    "mediaPermission": "Permita vídeos do YouTube nas preferências de cookies. Clique para configurar.",
     "close": "Fechar vídeo",
     "items": [
       { "title": "Roleta", "text": "Sorteios e prêmios para eventos." },
@@ -100,6 +101,7 @@
     "title": "Todos os jogos",
     "expand": "Clique para ver todos os 23 jogos",
     "watch": "Assistir vídeo",
+    "mediaPermission": "Permita vídeos do YouTube nas preferências de cookies. Clique para configurar.",
     "close": "Fechar vídeo",
     "demo": "Jogar"
   },
@@ -110,5 +112,55 @@
     "whatsappMessage": "Oi, Zazá! Quero conversar sobre um jogo para o meu projeto.",
     "email": "E-mail",
     "instagram": "Instagram"
+  },
+  "CookieConsent": {
+    "title": "Sua privacidade, suas escolhas",
+    "description": "Usamos armazenamento necessário para lembrar suas preferências. Com sua autorização, medimos como a página é usada, ativamos publicidade ou carregamos vídeos do YouTube. Você pode aceitar, rejeitar os opcionais ou escolher por categoria.",
+    "privacyLink": "Aviso de privacidade e cookies",
+    "reject": "Rejeitar opcionais",
+    "customize": "Escolher por categoria",
+    "acceptAll": "Aceitar todos",
+    "settingsTitle": "Preferências de privacidade",
+    "settingsIntro": "As categorias opcionais começam desativadas. Sua escolha fica salva neste navegador por até 180 dias e pode ser alterada depois.",
+    "necessaryTitle": "Armazenamento necessário",
+    "alwaysOn": "Sempre ativo",
+    "necessaryDescription": "Guarda sua escolha de consentimento neste navegador. É necessário para lembrar suas preferências.",
+    "analyticsTitle": "Análise de uso (GA4)",
+    "analyticsDescription": "Mede visitas e interações, como cliques em chamadas para ação, contatos, abertura de demos e progresso dos vídeos, para avaliar o desempenho da página.",
+    "marketingTitle": "Publicidade (Meta, TikTok e Google Ads)",
+    "marketingDescription": "Mede resultados de anúncios e conversões e pode ajudar a criar públicos de remarketing.",
+    "mediaTitle": "Mídia externa (YouTube)",
+    "mediaDescription": "Carrega miniaturas, recursos do player e vídeos do YouTube quando você escolhe assistir a uma demo.",
+    "save": "Salvar escolhas",
+    "back": "Voltar",
+    "openSettings": "Configurar cookies"
+  },
+  "Privacy": {
+    "title": "Privacidade e cookies",
+    "intro": "Esta página explica quais dados de uso podem ser medidos na landing page da Zaza Games e como você pode controlar cookies e tecnologias semelhantes.",
+    "updated": "Última atualização: 22 de outubro de 2026",
+    "backToSite": "Voltar para a Zaza Games",
+    "controllerTitle": "Responsável pelo tratamento",
+    "controllerText": "Esta página é mantida por Lucas Zaranza, responsável pela Zaza Games. Para dúvidas ou solicitações sobre privacidade, escreva para",
+    "eventsTitle": "O que a página pode medir",
+    "eventsText": "Quando você autoriza análise ou publicidade, a página pode enviar visualizações, parâmetros de campanha UTM e, com publicidade autorizada, identificadores de clique de anúncios; também mede cliques em CTAs e contatos, método de contato escolhido, abertura de demos, início de vídeo e marcos de progresso (25%, 50%, 75% e conclusão). Removemos outros parâmetros da URL antes de enviar a localização da página e não enviamos o conteúdo da mensagem pré-preenchida do WhatsApp.",
+    "categoriesTitle": "Categorias e finalidades",
+    "necessaryTitle": "Necessário",
+    "necessaryText": "Armazena sua escolha de consentimento no navegador por até 180 dias. Não é usado para publicidade nem medição de comportamento.",
+    "analyticsTitle": "Análise de uso — Google Analytics 4",
+    "analyticsText": "Ajuda a entender visitas e interações com a página, como CTAs, contatos e demos. A categoria fica desativada até você autorizá-la.",
+    "marketingTitle": "Publicidade — Meta Pixel, TikTok Pixel e Google Ads",
+    "marketingText": "Pode medir conversões de campanhas e criar ou avaliar públicos de anúncios e remarketing. Esta categoria fica desativada até você autorizá-la.",
+    "mediaTitle": "Mídia externa — YouTube",
+    "mediaText": "Permite carregar miniaturas, o player e vídeos hospedados no YouTube. Sem essa autorização, os vídeos e miniaturas remotas não são carregados; você pode alterar essa escolha nas configurações de cookies.",
+    "storageTitle": "Armazenamento e duração",
+    "storageText": "A preferência de consentimento é salva no armazenamento local do navegador por até 180 dias. Cookies e identificadores definidos pelas ferramentas de terceiros dependem das tags e prazos configurados em cada plataforma. Como esses prazos podem mudar, consulte também os avisos dos fornecedores e as configurações publicadas no Gerenciador de tags.",
+    "providersTitle": "Fornecedores e avisos de privacidade",
+    "providersText": "As ferramentas habilitadas após sua autorização podem receber dados técnicos do navegador, como endereço IP, informações do dispositivo e eventos autorizados. Consulte os avisos de cada fornecedor:",
+    "google": "Google (Analytics, Ads e YouTube)",
+    "meta": "Meta (Facebook e Instagram)",
+    "tiktok": "TikTok",
+    "rightsTitle": "Suas escolhas e solicitações",
+    "rightsText": "Você pode rejeitar categorias opcionais ou alterar/revogar sua escolha a qualquer momento no link “Configurar cookies” no rodapé. Para exercer direitos relacionados aos seus dados pessoais ou fazer uma pergunta, contate lucaszaranza@gmail.com."
   }
 }

@@ -6,6 +6,7 @@ import { demoVideoIds } from "@/data/demos";
 import { contactEmail, frontendPortfolioUrl, gamePortfolioUrl, instagramUrl } from "@/config/site";
 import { frontendProjects } from "@/data/frontendProjects";
 import TrackedAnchor from "./TrackedAnchor";
+import CookieSettingsButton from "./CookieSettingsButton";
 import Image from "next/image";
 import games from "@/data/games.json";
 
@@ -90,7 +91,7 @@ export function Header() {
         <ul className="hidden gap-5 text-sm sm:flex">
           {links.map((key) => (
             <li key={key}>
-              <a href={`#${key}`} className="hover:text-gold-glow">
+              <a href={`/${locale}#${key}`} className="hover:text-gold-glow">
                 {t(key)}
               </a>
             </li>
@@ -117,7 +118,7 @@ export function Hero() {
       <div className="mx-auto max-w-5xl text-center md:text-left">
         <div>
           <div className="flex items-center justify-center gap-2 md:justify-start md:gap-3">
-            <Logo height={144} className="h-12 w-12 shrink-0 md:h-36 md:w-36" />
+            <Logo height={144} className="h-20 w-20 shrink-0 md:h-36 md:w-36" />
             <Image
               src={heroLogo.src}
               width={heroLogo.width}
@@ -127,7 +128,7 @@ export function Hero() {
               unoptimized
               loading="eager"
               fetchPriority="high"
-              className="block h-auto w-54 max-w-full md:w-56"
+              className="block h-auto w-40 max-w-full md:w-56"
             />
           </div>
           <p className="mt-4 font-pixel text-[11px] leading-relaxed text-gold-glow sm:text-sm">
@@ -155,7 +156,7 @@ export function Hero() {
               {t("ctaDemos")}
             </TrackedAnchor>
           </div>
-          <ul className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm md:justify-start">
+          <ul className="mx-auto mt-6 flex w-fit flex-col items-start gap-y-2 text-sm md:mx-0 md:flex-row md:flex-wrap md:gap-x-5">
             {proofs.map((proof) => (
               <li key={proof} className="flex items-center gap-2">
                 <span aria-hidden="true" className="font-bold text-gold-glow">✓</span>
@@ -218,6 +219,7 @@ export function Demos() {
               title={item.title}
               playLabel={t("play")}
               closeLabel={t("close")}
+              mediaPermissionLabel={t("mediaPermission")}
               portrait={index === 1}
             />
             <figcaption className="mt-4">
@@ -264,6 +266,7 @@ export function AllGames() {
                     title={game.name[locale]}
                     playLabel={t("watch")}
                     closeLabel={t("close")}
+                    mediaPermissionLabel={t("mediaPermission")}
                     portrait={game.youtube.includes("/shorts/")}
                     thumbnail={game.image}
                     className="border-0 shadow-none"
@@ -453,9 +456,18 @@ export function Contact() {
 }
 
 export function Footer() {
+  const locale = useLocale();
+  const t = useTranslations("CookieConsent");
+
   return (
     <footer className="border-t-4 border-ink bg-ink px-6 py-6 text-center text-sm text-white/70">
-      © {new Date().getFullYear()} {brandName}
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-5 gap-y-2">
+        <span>© {new Date().getFullYear()} {brandName}</span>
+        <Link href={`/${locale}/privacy`} className="underline decoration-white/50 underline-offset-4 hover:text-gold-glow">
+          {t("privacyLink")}
+        </Link>
+        <CookieSettingsButton label={t("openSettings")} />
+      </div>
     </footer>
   );
 }

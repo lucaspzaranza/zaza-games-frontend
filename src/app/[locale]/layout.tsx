@@ -5,6 +5,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { siteUrl } from "@/config/site";
+import CookieConsentManager from "@/components/CookieConsentManager";
 import "../globals.css";
 
 const pixelFont = Press_Start_2P({ weight: "400", subsets: ["latin"], variable: "--font-press-start" });
@@ -67,7 +68,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale === "pt" ? "pt-BR" : "en"} className={`${pixelFont.variable} ${bodyFont.variable}`}>
       <body className="font-sans antialiased">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          {children}
+          <CookieConsentManager gtmId={process.env.NEXT_PUBLIC_GTM_ID ?? ""} />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

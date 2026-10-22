@@ -18,7 +18,7 @@
     "proofs": [
       "Your brand, colors and prizes",
       "Rankings and player sign-ups",
-      "Runs on phones and computers, with no install"
+      "Phone and computer, no install needed"
     ],
     "ctaDemos": "See games in action",
     "ctaContact": "Request a proposal"
@@ -46,6 +46,7 @@
     "title": "See it in action",
     "intro": "A few of the games that can become yours. Click to watch.",
     "play": "Watch",
+    "mediaPermission": "Allow YouTube videos in cookie preferences. Click to configure.",
     "close": "Close video",
     "items": [
       { "title": "Roulette", "text": "Draws and prizes for events." },
@@ -120,6 +121,7 @@
     "title": "All games",
     "expand": "Browse all 23 games",
     "watch": "Watch video",
+    "mediaPermission": "Allow YouTube videos in cookie preferences. Click to configure.",
     "close": "Close video",
     "demo": "Play"
   },
@@ -130,5 +132,55 @@
     "whatsappMessage": "Hi, Zazá! I'd like to talk about a game for my project.",
     "email": "Email",
     "instagram": "Instagram"
+  },
+  "CookieConsent": {
+    "title": "Your privacy, your choice",
+    "description": "We use necessary browser storage to remember your preferences. With your permission, we measure how the page is used, enable advertising, or load YouTube videos. You can accept, reject optional categories, or choose by category.",
+    "privacyLink": "Privacy and cookie notice",
+    "reject": "Reject optional",
+    "customize": "Choose by category",
+    "acceptAll": "Accept all",
+    "settingsTitle": "Privacy preferences",
+    "settingsIntro": "Optional categories are off by default. Your choice is saved in this browser for up to 180 days and can be changed later.",
+    "necessaryTitle": "Necessary storage",
+    "alwaysOn": "Always on",
+    "necessaryDescription": "Stores your consent choice in this browser so your preferences can be remembered.",
+    "analyticsTitle": "Usage analytics (GA4)",
+    "analyticsDescription": "Measures visits and interactions such as calls to action, contact clicks, demo opens, and video progress to understand page performance.",
+    "marketingTitle": "Advertising (Meta, TikTok and Google Ads)",
+    "marketingDescription": "Measures advertising results and conversions and may help build remarketing audiences.",
+    "mediaTitle": "External media (YouTube)",
+    "mediaDescription": "Loads YouTube thumbnails, player resources, and videos when you choose to watch a demo.",
+    "save": "Save choices",
+    "back": "Back",
+    "openSettings": "Cookie settings"
+  },
+  "Privacy": {
+    "title": "Privacy and cookies",
+    "intro": "This notice explains which usage data may be measured on the Zaza Games landing page and how you can control cookies and similar technologies.",
+    "updated": "Last updated: October 22, 2026",
+    "backToSite": "Back to Zaza Games",
+    "controllerTitle": "Data controller",
+    "controllerText": "This page is maintained by Lucas Zaranza, who is responsible for Zaza Games. For privacy questions or requests, email",
+    "eventsTitle": "What the page may measure",
+    "eventsText": "When you allow analytics or advertising, the page may send page views and UTM campaign parameters; advertising consent also allows ad click identifiers. It may measure CTA and contact clicks, the selected contact method, demo opens, video starts, and video progress milestones (25%, 50%, 75%, and completion). Other URL parameters are removed before the page location is sent, and the prefilled WhatsApp message content is not sent through these events.",
+    "categoriesTitle": "Categories and purposes",
+    "necessaryTitle": "Necessary",
+    "necessaryText": "Stores your consent choice in this browser for up to 180 days. It is not used for advertising or behavior measurement.",
+    "analyticsTitle": "Usage analytics — Google Analytics 4",
+    "analyticsText": "Helps us understand visits and interactions with the page, such as CTAs, contacts, and demos. This category stays off until you allow it.",
+    "marketingTitle": "Advertising — Meta Pixel, TikTok Pixel and Google Ads",
+    "marketingText": "May measure campaign conversions and create or evaluate advertising and remarketing audiences. This category stays off until you allow it.",
+    "mediaTitle": "External media — YouTube",
+    "mediaText": "Allows YouTube thumbnails, the player, and hosted videos to load. Without this permission, remote video and thumbnail requests are blocked. You can change this choice in cookie settings.",
+    "storageTitle": "Storage and retention",
+    "storageText": "Your consent preference is stored in your browser's local storage for up to 180 days. Cookies and identifiers set by third-party tools depend on the tags and retention periods configured in each platform. Those periods can change, so also review the providers' notices and the settings published in Tag Manager.",
+    "providersTitle": "Providers and privacy notices",
+    "providersText": "Tools enabled after your permission may receive technical browser data such as IP address, device information, and authorized events. Review each provider's notice:",
+    "google": "Google (Analytics, Ads and YouTube)",
+    "meta": "Meta (Facebook and Instagram)",
+    "tiktok": "TikTok",
+    "rightsTitle": "Your choices and requests",
+    "rightsText": "You can reject optional categories or change/revoke your choice at any time using “Cookie settings” in the footer. To exercise rights related to your personal data or ask a question, contact lucaszaranza@gmail.com."
   }
 }

@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { trackEvent } from "@/lib/analytics";
+import { CONSENT_SETTINGS_OPEN_EVENT } from "@/lib/consent";
+import { useCookieConsent } from "@/hooks/useCookieConsent";
 
 type YouTubePlayer = {
   destroy: () => void;
@@ -69,6 +71,7 @@ type Props = {
   title: string;
   playLabel: string;
   closeLabel: string;
+  mediaPermissionLabel: string;
   className?: string;
   thumbnail?: string;
   portrait?: boolean;
@@ -79,10 +82,14 @@ export default function LiteYouTube({
   title,
   playLabel,
   closeLabel,
+  mediaPermissionLabel,
   className = "",
   thumbnail,
   portrait = false,
 }: Props) {
+  const consent = useCookieConsent();
+  const mediaAllowed = consent?.externalMedia === true;
+  const localThumbnail = thumbnail?.startsWith("/") ?? false;
   const [active, setActive] = useState(false);
   const [apiFailed, setApiFailed] = useState(false);
   const [playerOrigin, setPlayerOrigin] = useState("");
@@ -109,6 +116,10 @@ export default function LiteYouTube({
       triggerRef.current?.focus();
     };
   }, [active]);
+
+  useEffect(() => {
+    if (!mediaAllowed) setActive(false);
+  }, [mediaAllowed]);
 
   useEffect(() => {
     if (!active || apiFailed) return;
@@ -185,15 +196,19 @@ export default function LiteYouTube({
           ref={triggerRef}
           type="button"
           onClick={() => {
+            if (!mediaAllowed) {
+              window.dispatchEvent(new Event(CONSENT_SETTINGS_OPEN_EVENT));
+              return;
+            }
             setApiFailed(false);
             setPlayerOrigin(window.location.origin);
             setActive(true);
             trackEvent({ event: "demo_open", game_name: title });
           }}
-          aria-label={`${playLabel}: ${title}`}
+          aria-label={`${mediaAllowed ? playLabel : mediaPermissionLabel}: ${title}`}
           className="group absolute inset-0 h-full w-full"
         >
-          {thumbnail ? (
+          {thumbnail && (mediaAllowed || localThumbnail) ? (
             <Image
               src={thumbnail}
               alt=""
@@ -201,7 +216,7 @@ export default function LiteYouTube({
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
               className="object-cover"
             />
-          ) : (
+          ) : mediaAllowed ? (
             <>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -211,10 +226,17 @@ export default function LiteYouTube({
                 className="h-full w-full object-cover"
               />
             </>
+          ) : null}
+          {!mediaAllowed && (
+            <span className="absolute inset-0 grid place-items-center bg-royal p-4 text-center text-sm font-semibold leading-relaxed text-white">
+              {mediaPermissionLabel}
+            </span>
           )}
-          <span className="absolute inset-0 grid place-items-center bg-ink/40 font-pixel text-3xl text-gold transition group-hover:bg-ink/10">
-            ▶
-          </span>
+          {mediaAllowed && (
+            <span className="absolute inset-0 grid place-items-center bg-ink/40 font-pixel text-3xl text-gold transition group-hover:bg-ink/10">
+              ▶
+            </span>
+          )}
         </button>
       </div>
 
