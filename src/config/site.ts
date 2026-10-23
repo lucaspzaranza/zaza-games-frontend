@@ -4,6 +4,8 @@ export const instagramUrl = "https://www.instagram.com/zazagames.studio";
 export const gamePortfolioUrl = "https://my-game-portfolio-next.vercel.app";
 export const frontendPortfolioUrl = "https://www.lucaszaranza.com.br/";
 export const contactEmail = "lucaszaranza@gmail.com";
+export const contactWhatsAppNumber =
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5585991753445";
 
 /*
 Quando o domínio estiver pronto

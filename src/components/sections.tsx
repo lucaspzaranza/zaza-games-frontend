@@ -3,7 +3,13 @@ import { useLocale, useTranslations } from "next-intl";
 import LiteYouTube from "./LiteYouTube";
 import Logo from "./Logo";
 import { demoVideoIds } from "@/data/demos";
-import { contactEmail, frontendPortfolioUrl, gamePortfolioUrl, instagramUrl } from "@/config/site";
+import {
+  contactEmail,
+  contactWhatsAppNumber,
+  frontendPortfolioUrl,
+  gamePortfolioUrl,
+  instagramUrl,
+} from "@/config/site";
 import { frontendProjects } from "@/data/frontendProjects";
 import TrackedAnchor from "./TrackedAnchor";
 import CookieSettingsButton from "./CookieSettingsButton";
@@ -415,7 +421,7 @@ export function About() {
 
 export function Contact() {
   const t = useTranslations("Contact");
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "");
+  const whatsappNumber = contactWhatsAppNumber.replace(/\D/g, "");
   const whatsappUrl = whatsappNumber
     ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(t("whatsappMessage"))}`
     : undefined;
