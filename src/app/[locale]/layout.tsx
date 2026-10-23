@@ -3,7 +3,6 @@ import { Lexend, Press_Start_2P } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import Script from "next/script";
 import { routing } from "@/i18n/routing";
 import { siteUrl } from "@/config/site";
 import CookieConsentManager from "@/components/CookieConsentManager";
@@ -12,35 +11,6 @@ import "../globals.css";
 
 const pixelFont = Press_Start_2P({ weight: "400", subsets: ["latin"], variable: "--font-press-start" });
 const bodyFont = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
-
-const rawGtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim() ?? "";
-const gtmId = /^GTM-[A-Z0-9]+$/i.test(rawGtmId) ? rawGtmId : "";
-console.log("[build] GTM id:", JSON.stringify(gtmId));
-const gtmBootstrap = gtmId
-  ? `
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
-      window.gtag('consent', 'default', {
-        analytics_storage: 'denied',
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        functionality_storage: 'granted',
-        personalization_storage: 'denied',
-        security_storage: 'granted',
-        wait_for_update: 500
-      });
-      (function(w,d,s,l,i){
-        w[l] = w[l] || [];
-        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-        var j = d.createElement(s);
-        var dl = l !== 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        d.head.appendChild(j);
-      })(window, document, 'script', 'dataLayer', ${JSON.stringify(gtmId)});
-    `
-  : "";
 
 export const dynamicParams = false;
 
@@ -99,11 +69,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale === "pt" ? "pt-BR" : "en"} className={`${pixelFont.variable} ${bodyFont.variable}`}>
       <body className="font-sans antialiased">
-        {gtmBootstrap && (
-          <Script id="zaza-gtm-consent-bootstrap" strategy="beforeInteractive">
-            {gtmBootstrap}
-          </Script>
-        )}
         <NextIntlClientProvider>
           <PrivacyReturnScrollRestoration />
           {children}

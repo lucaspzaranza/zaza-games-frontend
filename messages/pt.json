@@ -31,7 +31,7 @@
       { "title": "Empresas", "text": "Apresente treinamentos, campanhas internas e ações com clientes em experiências que convidam à participação." },
       { "title": "Educação", "text": "Ajude alunos a praticar conteúdos brincando, pelo celular ou computador, sem instalar um aplicativo." },
       { "title": "Festas", "text": "Chá revelação, aniversário ou festa de noiva: anime os convidados e revele o prêmio na hora." },
-      { "title": "Negócios e escolas", "text": "Tem um serviço ou conteúdo que merece uma experiência interativa? Posso criar algo como um jogo de escovação para consultórios ou um app musical para aulas." }
+      { "title": "Negócios e escolas", "text": "Você terá um jogo personalizado com a cara do seu negócio, criado para apresentar seus serviços ou conteúdos de um jeito interativo." }
     ]
   },
   "Offer": {
@@ -57,24 +57,28 @@
   },
   "Frontend": {
     "title": "Projetos web",
-    "intro": "Interfaces que desenvolvi como dev frontend, de apps complexos a portfólios.",
+    "intro": "Projetos que mostram como experiências digitais podem apresentar ideias, envolver pessoas e funcionar em diferentes contextos.",
     "visit": "Visitar site",
     "items": {
       "zazastro": {
         "title": "Zazastro",
-        "text": "Aplicação de astrologia criada do zero, com mapas interativos em SVG e D3.js, rotas compartilháveis por link e vários idiomas."
+        "text": "Aplicação de astrologia com mapas interativos, páginas que podem ser compartilhadas por link e conteúdo em vários idiomas.",
+        "highlights": ["Mapas interativos", "Compartilhável por link", "Vários idiomas"]
       },
       "botbot": {
         "title": "Dashboard de robôs",
-        "text": "Painel em React para monitorar e comandar robôs, com câmeras e chat com IA."
+        "text": "Painel para acompanhar e comandar robôs, com câmeras e chat com inteligência artificial.",
+        "highlights": ["Câmeras integradas", "Comando de robôs", "Chat com IA", "Dashboard Customizável", "Dados em tempo real"]
       },
       "frontendPortfolio": {
         "title": "Meu portfólio frontend",
-        "text": "Portfólio pessoal com React, Next.js, TypeScript e Tailwind CSS."
+        "text": "Portfólio profissional para apresentar projetos, trajetória e canais de contato.",
+        "highlights": ["Projetos em destaque", "Apresentação profissional", "Contato direto"]
       },
       "gamePortfolio": {
         "title": "Landing page de Game Dev",
-        "text": "Minha landing page profissional, dedicada exclusivamente ao meu trabalho como desenvolvedor de games."
+        "text": "Portfólio dedicado a jogos, com uma apresentação temática que aproxima o visitante do universo do estúdio.",
+        "highlights": ["Foco em jogos", "Identidade temática", "Experiência interativa"]
       }
     }
   },

@@ -334,12 +334,12 @@ export function FrontendProjects() {
               <h3 className={cardTitle}>{t(`items.${project.key}.title`)}</h3>
               <p className="mb-4 text-sm">{t(`items.${project.key}.text`)}</p>
               <ul className="mb-4 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
+                {(t.raw(`items.${project.key}.highlights`) as string[]).map((highlight) => (
                   <li
-                    key={tag}
+                    key={highlight}
                     className="border-2 border-ink bg-snow px-2 py-0.5 text-xs"
                   >
-                    {tag}
+                    {highlight}
                   </li>
                 ))}
               </ul>

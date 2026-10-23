@@ -23,13 +23,13 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
-        source: "/wpp-group",
+        source: "/wpp_group",
         destination:
           "/pt?utm_source=whatsapp&utm_medium=wpp_group&utm_content=wpp&utm_campaign=profile",
         permanent: false,
       },
       {
-        source: "/wpp-private",
+        source: "/wpp_private",
         destination:
           "/pt?utm_source=whatsapp&utm_medium=wpp_private&utm_content=wpp&utm_campaign=profile",
         permanent: false,

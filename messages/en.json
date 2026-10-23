@@ -31,7 +31,7 @@
       { "title": "Businesses", "text": "Present training, internal campaigns and customer activities as experiences people are invited to join." },
       { "title": "Education", "text": "Help students practice through play on a phone or computer, without installing an app." },
       { "title": "Parties", "text": "Gender reveals, birthdays or bridal parties: entertain guests and reveal the prize on the spot." },
-      { "title": "Businesses and schools", "text": "Have a service or subject that could use an interactive experience? I can build ideas such as a tooth-brushing game for a dental office or a music app for lessons." }
+      { "title": "Businesses and schools", "text": "Get a custom game that feels like your business, designed to present your services or content in an interactive way." }
     ]
   },
   "Offer": {
@@ -57,24 +57,28 @@
   },
   "Frontend": {
     "title": "Web projects",
-    "intro": "Interfaces I built as a frontend developer, from complex apps to portfolios.",
+    "intro": "Projects that show how digital experiences can present ideas, engage people and work in different contexts.",
     "visit": "Visit site",
     "items": {
       "zazastro": {
         "title": "Zazastro",
-        "text": "Astrology web app built from scratch, with interactive SVG charts using D3.js, shareable routes and multiple languages."
+        "text": "Astrology app with interactive charts, pages that can be shared by link, and content in multiple languages.",
+        "highlights": ["Interactive charts", "Shareable by link", "Multiple languages"]
       },
       "botbot": {
         "title": "Robot dashboard",
-        "text": "React dashboard to monitor and command robots, with cameras and an AI chat."
+        "text": "A dashboard to monitor and command robots, with cameras and an artificial intelligence chat.",
+        "highlights": ["Integrated cameras", "Robot control", "AI chat", "Customizable Dashboard", "Real time data"]
       },
       "frontendPortfolio": {
         "title": "My frontend portfolio",
-        "text": "Personal portfolio built with React, Next.js, TypeScript and Tailwind CSS."
+        "text": "A professional portfolio for presenting projects, experience and contact channels.",
+        "highlights": ["Featured projects", "Professional profile", "Direct contact"]
       },
       "gamePortfolio": {
         "title": "Game Dev landing page",
-        "text": "My professional landing page, dedicated exclusively to my work as a game developer."
+        "text": "A games-focused portfolio with a themed presentation that brings visitors into the studio's world.",
+        "highlights": ["Games-focused", "Themed identity", "Interactive experience"]
       }
     }
   },
