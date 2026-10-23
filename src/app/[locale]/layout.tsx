@@ -21,10 +21,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Meta" });
+  const googleVerification = process.env.GOOGLE_SITE_VERIFICATION?.trim();
   return {
     metadataBase: new URL(siteUrl),
     title: t("title"),
     description: t("description"),
+    ...(googleVerification ? { verification: { google: googleVerification } } : {}),
     alternates: {
       canonical: `/${locale}`,
       languages: { "pt-BR": "/pt", en: "/en", "x-default": "/pt" },

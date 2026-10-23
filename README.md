@@ -8,6 +8,12 @@ The site now includes a consent banner in Portuguese and English. Analytics, adv
 
 GA4, Meta Pixel, TikTok Pixel and Google Ads tags are configured inside your GTM account; their account IDs are not hard-coded in this project. The page sends `page_view`, `cta_click`, `contact_click`, `demo_open`, `video_start` and `video_progress` events to `window.dataLayer` only after analytics or advertising consent, with `analytics_consent` and `marketing_consent` flags so each destination can be gated correctly. YouTube thumbnails and players also wait for the separate external-media choice. See [the setup guide](docs/marketing-tracking.md) for GTM tag triggers, consent rules and launch checks.
 
+## Search indexing
+
+The production site URL is configured in `src/config/site.ts`. The app generates `/sitemap.xml` for the Portuguese and English home and privacy pages, and `/robots.txt` allows crawlers and points them to the sitemap.
+
+To verify the site with Google Search Console, set `GOOGLE_SITE_VERIFICATION` to the verification code Google provides in `.env.local` and in the Vercel **Production** environment, then redeploy. The Google verification meta tag is emitted only when this variable is set. After deployment, add `https://zaza-games-frontend.vercel.app` as a URL-prefix property in Search Console, submit `https://zaza-games-frontend.vercel.app/sitemap.xml`, and request indexing for `https://zaza-games-frontend.vercel.app/pt` in URL Inspection.
+
 ## Getting Started
 
 First, run the development server:
