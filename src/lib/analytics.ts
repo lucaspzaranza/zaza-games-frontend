@@ -8,7 +8,6 @@ declare global {
   interface Window {
     dataLayer?: DataLayerEntry[];
     gtag?: (...args: unknown[]) => void;
-    __zazaGtmStarted?: boolean;
     __zazaAnalyticsInitialized?: boolean;
     __zazaMarketingInitialized?: boolean;
   }
@@ -56,27 +55,8 @@ function consentAwarePageLocation(choices: ConsentChoices) {
   return `${current.origin}${current.pathname}${safeQuery ? `?${safeQuery}` : ""}`;
 }
 
-export function setGoogleConsentDefaults() {
-  const gtag = ensureGtagQueue();
-  gtag("consent", "default", {
-    analytics_storage: "denied",
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    functionality_storage: "granted",
-    personalization_storage: "denied",
-    security_storage: "granted",
-  });
-}
-
 export function updateGoogleConsent(choices: ConsentChoices) {
   ensureGtagQueue()("consent", "update", consentModeState(choices));
-}
-
-export function queueGtmStart() {
-  if (typeof window === "undefined" || window.__zazaGtmStarted) return;
-  window.__zazaGtmStarted = true;
-  ensureDataLayer().push({ "gtm.start": Date.now(), event: "gtm.js" });
 }
 
 export function trackEvent(payload: DataLayerEvent) {

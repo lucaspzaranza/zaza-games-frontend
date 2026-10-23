@@ -5,9 +5,9 @@
 - Shows the same first-level options in Portuguese and English: accept all, reject optional categories, or manage preferences.
 - Keeps analytics, advertising and external YouTube media disabled until the visitor opts in. Necessary local storage only remembers the consent choice.
 - Stores the choice in the browser for up to 180 days. Visitors can reopen settings or revoke their choice through **Cookie settings / Configurar cookies** in the footer.
-- Sets Google Consent Mode v2 defaults to denied before any GTM script is loaded, then updates the consent state when the visitor saves a choice.
-- Loads GTM only if analytics or advertising is allowed. YouTube thumbnails, the iframe API and the player only load when external media is allowed.
-- Does not load any optional vendor tag until `NEXT_PUBLIC_GTM_ID` has a valid container ID.
+- Sets Google Consent Mode v2 defaults to denied before GTM starts, then updates the consent state when the visitor saves a choice.
+- Loads the GTM container on every page when `NEXT_PUBLIC_GTM_ID` has a valid container ID. Configure non-essential tags in GTM so they require the relevant consent before firing. YouTube thumbnails, the iframe API and the player only load when external media is allowed.
+- Does not load the GTM container if `NEXT_PUBLIC_GTM_ID` is empty or invalid.
 
 The project has no GTM, GA4, Meta, TikTok or Google Ads account IDs. Those destinations and their tags are managed in the GTM web container; this project supplies the consent state and event data layer.
 
@@ -54,7 +54,7 @@ Do not set non-essential destination tags to an unrestricted **All Pages** trigg
 
 ## 3. Publish and check the configuration
 
-1. Use GTM Preview / Tag Assistant. Before choosing consent, confirm that the GTM script and vendor tags have not loaded.
+1. Use GTM Preview / Tag Assistant. Before choosing consent, confirm that the GTM script is loaded, Google consent states are denied, and non-essential vendor tags have not fired. Keep non-essential tags off unrestricted **All Pages** triggers: Google Consent Mode can allow cookieless pings from Google tags that fire while consent is denied.
 2. Choose analytics only. Confirm GA4 tags can fire and advertising tags do not.
 3. Choose advertising only. Confirm advertising tags can fire and GA4 events do not.
 4. Reject optional categories. Confirm no optional tags fire. Then open **Cookie settings / Configurar cookies** in the footer, enable one category and check that consent updates without a page refresh.

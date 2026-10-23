@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
@@ -12,31 +11,23 @@ import {
   type ConsentChoices,
   type StoredConsent,
 } from "@/lib/consent";
-import { queueGtmStart, setGoogleConsentDefaults, trackConsentActivation, updateGoogleConsent } from "@/lib/analytics";
+import { trackConsentActivation, updateGoogleConsent } from "@/lib/analytics";
 
 type Panel = "banner" | "settings" | null;
 type ChoiceKey = keyof ConsentChoices;
 
-function validGtmId(value: string) {
-  return /^GTM-[A-Z0-9]+$/i.test(value.trim()) ? value.trim() : "";
-}
-
-export default function CookieConsentManager({ gtmId: gtmIdProp = "" }: { gtmId?: string }) {
+export default function CookieConsentManager() {
   const t = useTranslations("CookieConsent");
   const locale = useLocale();
-  const gtmId = validGtmId(gtmIdProp);
   const [consent, setConsent] = useState<StoredConsent | null>(null);
   const [draft, setDraft] = useState<ConsentChoices>(deniedConsent);
   const [panel, setPanel] = useState<Panel>(null);
   const [ready, setReady] = useState(false);
-  const [loadGtm, setLoadGtm] = useState(false);
   const initialized = useRef(false);
 
   useEffect(() => {
     if (initialized.current) return;
     initialized.current = true;
-
-    setGoogleConsentDefaults();
 
     const stored = readConsent();
     setConsent(stored);
@@ -44,10 +35,6 @@ export default function CookieConsentManager({ gtmId: gtmIdProp = "" }: { gtmId?
 
     if (stored) {
       updateGoogleConsent(stored);
-      if (gtmId && (stored.analytics || stored.marketing)) {
-        queueGtmStart();
-        setLoadGtm(true);
-      }
       trackConsentActivation(stored);
     } else {
       setPanel("banner");
@@ -55,7 +42,7 @@ export default function CookieConsentManager({ gtmId: gtmIdProp = "" }: { gtmId?
 
     setReady(true);
 
-  }, [gtmId]);
+  }, []);
 
   useEffect(() => {
     const openSettings = () => {
@@ -74,10 +61,6 @@ export default function CookieConsentManager({ gtmId: gtmIdProp = "" }: { gtmId?
     setPanel(null);
 
     updateGoogleConsent(saved);
-    if (gtmId && (saved.analytics || saved.marketing)) {
-      queueGtmStart();
-      setLoadGtm(true);
-    }
     trackConsentActivation(saved, previous);
   }
 
@@ -89,14 +72,6 @@ export default function CookieConsentManager({ gtmId: gtmIdProp = "" }: { gtmId?
 
   return (
     <>
-      {loadGtm && gtmId && (
-        <Script
-          id="zaza-google-tag-manager"
-          src={`https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(gtmId)}`}
-          strategy="afterInteractive"
-        />
-      )}
-
       {showPanel && (
         <section
           aria-labelledby="cookie-consent-title"
