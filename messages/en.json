@@ -135,7 +135,7 @@
   },
   "CookieConsent": {
     "title": "Cookies and privacy",
-    "description": "We use optional cookies for analytics, advertising, and YouTube videos. You choose what to allow.",
+    "description": "We use optional cookies for analytics and to load YouTube videos. You choose what to allow.",
     "privacyLink": "Privacy and cookie notice",
     "reject": "Reject",
     "customize": "Customize",
