@@ -23,7 +23,7 @@ export const frontendProjects: FrontendProject[] = [
   },
   {
     key: "gamePortfolio",
-    image: "/frontend-projects/game-portfolio.webp",
+    image: "/frontend-projects/game-portfolio-2.webp",
     url: gamePortfolioUrl,
   },
 ];
