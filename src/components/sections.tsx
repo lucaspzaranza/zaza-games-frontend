@@ -227,6 +227,7 @@ export function Demos() {
               playLabel={t("play")}
               closeLabel={t("close")}
               mediaPermissionLabel={t("mediaPermission")}
+              squarePreviewOnMobile
             />
             <figcaption className="mt-4">
               <h3 className="font-pixel text-xs leading-relaxed text-royal-shadow">

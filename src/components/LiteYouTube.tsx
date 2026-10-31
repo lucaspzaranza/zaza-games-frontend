@@ -76,6 +76,7 @@ type Props = {
   className?: string;
   thumbnail?: string;
   portrait?: boolean;
+  squarePreviewOnMobile?: boolean;
 };
 
 export default function LiteYouTube({
@@ -88,6 +89,7 @@ export default function LiteYouTube({
   className = "",
   thumbnail,
   portrait = false,
+  squarePreviewOnMobile = false,
 }: Props) {
   const consent = useCookieConsent();
   const mediaAllowed = consent?.externalMedia === true;
@@ -98,6 +100,7 @@ export default function LiteYouTube({
   const [isMobile, setIsMobile] = useState(false);
   const activeId = isMobile && mobileId ? mobileId : id;
   const isPortrait = mobileId ? isMobile : portrait;
+  const squarePreview = squarePreviewOnMobile && isMobile;
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const playerRef = useRef<HTMLIFrameElement>(null);
@@ -200,12 +203,12 @@ export default function LiteYouTube({
   }, [active, activeId, apiFailed, title]);
 
   const playerSize = isPortrait
-    ? "aspect-[9/16] h-[min(85svh,800px)] max-w-[90vw]"
+    ? "aspect-[9/16] h-[min(70svh,720px)] max-w-[80vw]"
     : "aspect-video w-[min(92vw,1280px)] max-h-[85svh]";
 
   return (
     <>
-      <div className={`relative ${isPortrait ? "aspect-[9/16]" : "aspect-video"} overflow-hidden border-4 border-ink bg-ink shadow-[6px_6px_0_0_#131a33] ${className}`}>
+      <div className={`relative ${squarePreview ? "aspect-square" : isPortrait ? "aspect-[9/16]" : "aspect-video"} overflow-hidden border-4 border-ink bg-ink shadow-[6px_6px_0_0_#131a33] ${className}`}>
         <button
           ref={triggerRef}
           type="button"
