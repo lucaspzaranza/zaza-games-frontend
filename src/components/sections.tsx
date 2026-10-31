@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import LiteYouTube from "./LiteYouTube";
 import Logo from "./Logo";
-import { demoVideoIds } from "@/data/demos";
+import { demoVideos } from "@/data/demos";
 import {
   contactEmail,
   contactWhatsAppNumber,
@@ -221,12 +221,12 @@ export function Demos() {
         {items.map((item, index) => (
           <figure key={item.title}>
             <LiteYouTube
-              id={demoVideoIds[index]}
+              id={demoVideos[index].desktop}
+              mobileId={demoVideos[index].mobile}
               title={item.title}
               playLabel={t("play")}
               closeLabel={t("close")}
               mediaPermissionLabel={t("mediaPermission")}
-              portrait={index === 1}
             />
             <figcaption className="mt-4">
               <h3 className="font-pixel text-xs leading-relaxed text-royal-shadow">

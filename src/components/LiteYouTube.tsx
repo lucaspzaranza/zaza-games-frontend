@@ -68,6 +68,7 @@ function loadYouTubeIframeApi() {
 
 type Props = {
   id: string;
+  mobileId?: string;
   title: string;
   playLabel: string;
   closeLabel: string;
@@ -79,6 +80,7 @@ type Props = {
 
 export default function LiteYouTube({
   id,
+  mobileId,
   title,
   playLabel,
   closeLabel,
@@ -93,10 +95,22 @@ export default function LiteYouTube({
   const [active, setActive] = useState(false);
   const [apiFailed, setApiFailed] = useState(false);
   const [playerOrigin, setPlayerOrigin] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
+  const activeId = isMobile && mobileId ? mobileId : id;
+  const isPortrait = mobileId ? isMobile : portrait;
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const playerRef = useRef<HTMLIFrameElement>(null);
   const watchedProgressRef = useRef(new Set<number>());
+
+  useEffect(() => {
+    if (!mobileId) return;
+    const media = window.matchMedia("(max-width: 639px)");
+    const update = () => setIsMobile(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, [mobileId]);
 
   useEffect(() => {
     if (!active) return;
@@ -183,15 +197,15 @@ export default function LiteYouTube({
       if (progressInterval !== undefined) window.clearInterval(progressInterval);
       player?.destroy();
     };
-  }, [active, apiFailed, id, title]);
+  }, [active, activeId, apiFailed, title]);
 
-  const playerSize = portrait
+  const playerSize = isPortrait
     ? "aspect-[9/16] h-[min(85svh,800px)] max-w-[90vw]"
     : "aspect-video w-[min(92vw,1280px)] max-h-[85svh]";
 
   return (
     <>
-      <div className={`relative aspect-video overflow-hidden border-4 border-ink bg-ink shadow-[6px_6px_0_0_#131a33] ${className}`}>
+      <div className={`relative ${isPortrait ? "aspect-[9/16]" : "aspect-video"} overflow-hidden border-4 border-ink bg-ink shadow-[6px_6px_0_0_#131a33] ${className}`}>
         <button
           ref={triggerRef}
           type="button"
@@ -220,7 +234,7 @@ export default function LiteYouTube({
             <>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
+                src={`https://i.ytimg.com/vi/${activeId}/hqdefault.jpg`}
                 alt=""
                 loading="lazy"
                 className="h-full w-full object-cover"
@@ -266,7 +280,7 @@ export default function LiteYouTube({
             <iframe
               ref={playerRef}
               className="absolute inset-0 h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${id}?enablejsapi=1&playsinline=1${playerOrigin ? `&origin=${encodeURIComponent(playerOrigin)}` : ""}${apiFailed ? "&autoplay=1" : ""}`}
+              src={`https://www.youtube-nocookie.com/embed/${activeId}?enablejsapi=1&playsinline=1${playerOrigin ? `&origin=${encodeURIComponent(playerOrigin)}` : ""}${apiFailed ? "&autoplay=1" : ""}`}
               title={title}
               allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
               allowFullScreen

@@ -50,7 +50,7 @@
     "close": "Close video",
     "items": [
       { "title": "Roulette", "text": "Draws and prizes for events." },
-      { "title": "Flappy Bird", "text": "A classic with your brand identity." },
+      { "title": "Zaza Bird", "text": "A classic with your brand identity." },
       { "title": "Prize Machine", "text": "Combos and giveaways on the spot." },
       { "title": "Memory Game", "text": "Great for kids and educational actions." }
     ]
