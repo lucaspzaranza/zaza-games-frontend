@@ -208,7 +208,7 @@ export default function LiteYouTube({
 
   return (
     <>
-      <div className={`relative ${squarePreview ? "aspect-square" : isPortrait ? "aspect-[9/16]" : "aspect-video"} overflow-hidden border-4 border-ink bg-ink shadow-[6px_6px_0_0_#131a33] ${className}`}>
+      <div className={`relative ${squarePreview ? "aspect-square" : "aspect-video"} overflow-hidden border-4 border-ink bg-ink shadow-[6px_6px_0_0_#131a33] ${className}`}>
         <button
           ref={triggerRef}
           type="button"
